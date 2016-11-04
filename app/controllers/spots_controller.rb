@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
   def index
-    "fkdslfja"
+    @all_spots = Spot.all
   end
 end
