@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  root 'application#index'
+  resources :spots
 
   get '/spots', to: 'spots#index'
+
+  root 'application#index'
+
 end
