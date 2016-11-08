@@ -1,2 +1,17 @@
 <h1>New Spots<h1>
-<p>A place where spots will be created</p>
+<p>Create New Surf Spots here</p>
+<%= form_for :spot do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  <p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
