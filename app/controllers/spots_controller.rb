@@ -5,4 +5,8 @@ class SpotsController < ApplicationController
 
   def new
   end
+
+  def create
+    render plain: params[:spot].inspect
+  end
 end

@@ -1,6 +1,6 @@
 <h1>New Spots<h1>
 <p>Create New Surf Spots here</p>
-<%= form_for :spot do |f| %>
+<%= form_for :spot, url: spots_path do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
