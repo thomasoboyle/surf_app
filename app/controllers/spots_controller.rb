@@ -8,13 +8,17 @@ class SpotsController < ApplicationController
   end
 
   def new
+    @spot = Spot.new
   end
 
   def create
     @spot = Spot.new(spot_params)
 
-    @spot.save
-    redirect_to @spot
+    if @spot.save
+      redirect_to @spot
+    else
+      render 'new'
+    end
   end
 
   private
