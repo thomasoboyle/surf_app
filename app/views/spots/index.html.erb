@@ -1,6 +1,16 @@
-<h1>Spots#index</h1>
-<p>Find me in app/views/spots/index.html.erb</p>
-<h2>Surf Spots</h2>
-<% @all_spots.each do |spot| %>
-  <%=spot%>
- <%end%>
+<h1>Spot List</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Location</th>
+  </tr>
+
+  <% @spots.each do |spot| %>
+    <tr>
+      <td><%= spot.title %></td>
+      <td><%= spot.location %></td>
+      <td><%= link_to 'Show', spot_path(spot) %></td>
+    </tr>
+  <% end %>
+</table>

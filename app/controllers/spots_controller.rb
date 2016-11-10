@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   def index
-    @all_spots = Spot.all
+    @spots = Spot.all
   end
 
   def show
