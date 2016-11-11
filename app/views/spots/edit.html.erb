@@ -9,7 +9,7 @@
         prohibited this article from being saved:
       </h2>
       <ul>
-        <% @spot.errors.full_messaged.each do |msg| %>
+        <% @spot.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
