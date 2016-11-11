@@ -25,6 +25,17 @@ class SpotsController < ApplicationController
     end
   end
 
+  def update
+    @spot = Spot.find(params[:id])
+    
+    if @spot.update(spot_params)
+      redirect_to @spot
+    else
+      render 'edit'
+    end
+  end
+
+
   private
 
   def spot_params
