@@ -1,0 +1,2 @@
+class SurfSession < ApplicationRecord
+end
