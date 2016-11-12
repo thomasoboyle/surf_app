@@ -13,6 +13,9 @@
       <td><%= spot.location %></td>
       <td><%= link_to 'Show', spot_path(spot) %></td>
       <td><%= link_to 'Edit', edit_spot_path(spot) %></td>
+      <td><%= link_to 'Destroy', spot_path(spot),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
