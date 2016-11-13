@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :surf_sessions do
-    resources :spots
-  end
+  resources :spots
+
+  resources :surf_sessions
+  
 
 
   get '/spots', to: 'spots#index'
