@@ -1,4 +1,5 @@
 class Spot < ApplicationRecord
+  has_many :surf_sessions
   validates :title,     presence: true,
                         uniqueness: true,
                         length: { minimum: 5,

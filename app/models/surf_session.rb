@@ -1,3 +1,3 @@
 class SurfSession < ApplicationRecord
-  has_a :spot
+  has_one :spot
 end
