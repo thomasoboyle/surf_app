@@ -21,7 +21,7 @@
  
   <p>
     <%= f.label :average_wave_height %><br>
-    <%= f.number_field :average_wave_height %>
+    <%= f.number_field(:average_wave_height, in: 1..25, step: 1) %>
   </p>
 
   <p>
