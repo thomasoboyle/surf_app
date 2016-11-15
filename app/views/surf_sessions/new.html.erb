@@ -1,32 +1,32 @@
 <%= form_for :article do |f| %>
   <p>
     <%= f.label :date %><br>
-    <%= f.text_field :date %>
-  </p>
-
-  <p>
-    <%= f.label :start_time %><br>
-    <%= f.text_field :start_time %>
-  </p>
-
-  <p>
-    <%= f.label :end_time %><br>
-    <%= f.text_field :end_time %>
-  </p>
- 
-  <p>
-    <%= f.label :average_wave_height %><br>
-    <%= f.text_area :average_wave_height %>
-  </p>
-
-  <p>
-    <%= f.label :session_summary %><br>
-    <%= f.text_field :session_summary %>
+    <%= f.date_select :date %>
   </p>
 
   <p>
     <%= f.label :spot_id %><br>
     <%= f.text_field :spot_id %>
+  </p>
+
+  <p>
+    <%= f.label :start_time %><br>
+    <%= f.time_field :start_time %>
+  </p>
+
+  <p>
+    <%= f.label :end_time %><br>
+    <%= f.time_field :end_time %>
+  </p>
+ 
+  <p>
+    <%= f.label :average_wave_height %><br>
+    <%= f.number_field :average_wave_height %>
+  </p>
+
+  <p>
+    <%= f.label :session_summary %><br>
+    <%= f.text_area :session_summary %>
   </p>
  
   <p>
