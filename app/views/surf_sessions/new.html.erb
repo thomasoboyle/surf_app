@@ -1,4 +1,19 @@
 <%= form_for @surf_session do |f| %>
+
+  <% if @surf_session.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@surf_session.errors.count, "error") %>
+        prohibited this surf session from being saved:
+      </h2> 
+      <ul>
+        <% @surf_session.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= f.label :date %><br>
     <%= f.date_select :date %>
@@ -32,4 +47,5 @@
   <p>
     <%= f.submit %>
   </p>
+
 <% end %>
