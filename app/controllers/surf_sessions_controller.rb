@@ -1,4 +1,9 @@
+
 class SurfSessionsController < ApplicationController
+  def index
+    @surf_sessions = SurfSession.all
+  end
+
   def new
     @surf_session = SurfSession.new
   end

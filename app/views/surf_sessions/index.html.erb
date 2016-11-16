@@ -1,0 +1,16 @@
+<h1>Surf Sessions</h1>
+<%= link_to 'Create a surf session', new_surf_session_url %>
+<h1> </h1>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Location</th>
+  </tr>
+
+  <% @surf_sessions.each do |surf_session| %>
+    <tr>
+      <td><%= surf_session.date %></td>
+      <td><%= surf_session.spot&.title %></td>
+    </tr>
+  <% end %>
+</table>
