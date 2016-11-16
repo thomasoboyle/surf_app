@@ -6,7 +6,7 @@
 
   <p>
     <%= f.label :spot_id %><br>
-    <%= f.text_field :spot_id %>
+    <%= f.collection_select(:spot_id, Spot.all, :id, :title) %>
   </p>
 
   <p>
