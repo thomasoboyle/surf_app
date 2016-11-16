@@ -1,14 +1,17 @@
-
 class SurfSessionsController < ApplicationController
   def index
     @surf_sessions = SurfSession.all
+  end
+
+  def show
+    @surf_session = SurfSession.find(params[:id])
   end
 
   def new
     @surf_session = SurfSession.new
   end
 
-  def show
+  def edit
     @surf_session = SurfSession.find(params[:id])
   end
 
