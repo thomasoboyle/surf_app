@@ -1,12 +1,36 @@
 <p>
   <strong>Title:</strong>
   <%= @surf_session.date %>
-  <%#= @surf_session.spot_id %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong>Spot:</strong>
   <%= @surf_session.spot.title %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @surf_session.date %>
+</p>
+
+<p>
+  <strong>Start Time:</strong>
+  <%= @surf_session.start_time %>
+</p>
+
+<p>
+  <strong>End Time:</strong>
+  <%= @surf_session.end_time %>
+</p>
+
+<p>
+  <strong>Average Wave Height:</strong>
+  <%= @surf_session.average_wave_height %>
+</p>
+
+<p>
+  <strong>Session Summary:</strong>
+  <%= @surf_session.session_summary %>
 </p>
 
 <%= link_to 'View All surf sessions', surf_sessions_path %>
