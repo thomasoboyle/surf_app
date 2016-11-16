@@ -25,6 +25,16 @@ class SurfSessionsController < ApplicationController
     end
   end
 
+  def update
+    @surf_session = SurfSession.find(params[:id])
+
+    if @surf_session.update(surf_params)
+      redirect_to @surf_session
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def surf_params
