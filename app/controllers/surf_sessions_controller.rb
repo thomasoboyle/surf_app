@@ -35,6 +35,13 @@ class SurfSessionsController < ApplicationController
     end
   end
 
+  def destroy
+    @surf_session = SurfSession.find(params[:id])
+    @surf_session.destroy
+
+    redirect_to surf_sessions_path
+  end
+
   private
 
   def surf_params
