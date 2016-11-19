@@ -1,54 +1,5 @@
 <h1> Record Your Surf Session</h1>
-<%= form_for @surf_session do |f| %>
 
-  <% if @surf_session.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@surf_session.errors.count, "error") %>
-        prohibited this surf session from being saved:
-      </h2> 
-      <ul>
-        <% @surf_session.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <p>
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </p>
-
-  <p>
-    <%= f.label :spot_id %><br>
-    <%= f.collection_select(:spot_id, Spot.all, :id, :title) %>
-  </p>
-
-  <p>
-    <%= f.label :start_time %><br>
-    <%= f.time_field :start_time %>
-  </p>
-
-  <p>
-    <%= f.label :end_time %><br>
-    <%= f.time_field :end_time %>
-  </p>
- 
-  <p>
-    <%= f.label :average_wave_height %><br>
-    <%= f.number_field(:average_wave_height, in: 1..25, step: 1) %>
-  </p>
-
-  <p>
-    <%= f.label :session_summary %><br>
-    <%= f.text_area :session_summary %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Cancel', surf_sessions_path %>
