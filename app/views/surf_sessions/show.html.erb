@@ -36,17 +36,7 @@
 </p>
 
 <h3>Comments</h3>
-<% @surf_session.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
+<%= render @surf_session.comments %>
 
 
 <h4>Add a comment:</h4>
