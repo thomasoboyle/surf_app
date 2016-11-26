@@ -1,6 +1,6 @@
 class SurfSession < ApplicationRecord
   belongs_to :spot
-  has_many   :comments
+  has_many   :comments, dependent: :destroy
    validates :date,
             :start_time,
             :end_time,
