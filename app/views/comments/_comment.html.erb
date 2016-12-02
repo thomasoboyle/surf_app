@@ -13,3 +13,27 @@
               method: :delete,
               data: { confirm: 'Are you sure youw would like to delete this comment?' } %>
 </p>
+
+
+<%
+=begin 
+
+Not sure where to put this errors messaging views
+I tried here and on the surf session show page
+
+<% if @comment.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%- pluralize(@comment.errors.count, 'error') %>
+prohibited
+      this comment from being saved:
+    </h2>
+    <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+=end %>
