@@ -45,7 +45,7 @@ class SurfSessionsController < ApplicationController
   private
 
   def surf_params
-    params.require(:surf_session).permit(:date, :start_time, :end_time, :average_wave_height, :session_summary, :spot_id)
+    params.require(:surf_session).permit(:date, :start_time, :end_time, :average_wave_height, :session_summary, :spot_id, :surfer)
   end
 
 end
