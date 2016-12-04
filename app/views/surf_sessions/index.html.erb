@@ -3,12 +3,14 @@
 <h1> </h1>
 <table>
   <tr>
+    <th>Surfer</th>
     <th>Date</th>
     <th>Location</th>
   </tr>
 
   <% @surf_sessions.each do |surf_session| %>
     <tr>
+      <td><%= surf_session&.surfer %></td>
       <td><%= surf_session&.date %></td>
       <td><%= surf_session.spot&.title %></td>
       <td><%= link_to 'Show', surf_session_path(surf_session) %></td>
