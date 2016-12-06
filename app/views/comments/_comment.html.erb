@@ -8,12 +8,8 @@
   <%= comment.body %>
 </p>
 
-<p>
-  <%= link_to 'Delete Comment', [comment.surf_session, comment],
+<%= link_to 'Delete Comment', [comment.surf_session, comment],
               method: :delete,
               data: { confirm: 'Are you sure youw would like to delete this comment?' } %>
-</p>
 
-<p>
-  <%= link_to 'Edit Comment', edit_surf_session_comment_path(comment.surf_session, comment.id) %>
-</p>
+<%= link_to 'Edit Comment', edit_surf_session_comment_path(comment.surf_session, comment.id) %>
