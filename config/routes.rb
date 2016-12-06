@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  root 'application#index'
+  root 'surf_sessions#index'
 
 end
