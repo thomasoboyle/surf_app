@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 
   def edit
-    @surf_session = SurfSession.find(params[:surf_session_id])
     @comment = Comment.find(params[:id])
   end
 
