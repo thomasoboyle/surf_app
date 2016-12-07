@@ -2,28 +2,39 @@
 <html>
   <head>
     <style>
-       #map {
-        height: 400px;
+       .map {
+        height: 600px;
         width: 100%;
        }
     </style>
   </head>
   <body>
     <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
+    <div class="map" id="mapUs"></div>
     <script>
       function initMap() {
-        // var uluru = {lat: -25.363, lng: 131.044};
         var hammonds = {lat: 34.415443, lng: -119.637207};
-        // create and center map
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+        var leadbetter = {lat: 34.398215, lng: -119.702134};
+        var rincon = {lat: 34.373054, lng: -119.477274};
+        // creates and centers map
+        var mapUs = new google.maps.Map(document.getElementById('mapUs'), {
+          zoom: 10,
           center: hammonds
         });
         
-        var marker = new google.maps.Marker({
+        var markerHammonds = new google.maps.Marker({
           position: hammonds,
-          map: map
+          map: mapUs
+        });
+
+        var markerLeadbetter = new google.maps.Marker({
+          position: leadbetter,
+          map: mapUs
+        });
+
+        var markerRincon = new google.maps.Marker({
+          position: rincon,
+          map: mapUs
         });
       }
     </script>
