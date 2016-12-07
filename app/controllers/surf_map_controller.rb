@@ -1,5 +1,6 @@
 class SurfMapController < ApplicationController
-  def surf_map
+  def index
     render 'surf_map'
   end
+
 end

@@ -1,2 +1,34 @@
-<h1> Surf Map </h1>
-<p>Will go here...</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        // var uluru = {lat: -25.363, lng: 131.044};
+        var hammonds = {lat: 34.415443, lng: -119.637207};
+        // create and center map
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: hammonds
+        });
+        
+        var marker = new google.maps.Marker({
+          position: hammonds,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjg5tk0hGz6vI_aSnq_5U4iw7Qg2z5cjg&callback=initMap">
+    </script>
+  </body>
+</html>
