@@ -8,14 +8,17 @@ class SpotsController < ApplicationController
   end
 
   def new
+    @spots = Spot.all
     @spot = Spot.new
   end
 
   def edit
+    @spots = Spot.all
     @spot = Spot.find(params[:id])
   end
 
   def create
+    @spots = Spot.all
     @spot = Spot.new(spot_params)
 
     if @spot.save
@@ -26,6 +29,7 @@ class SpotsController < ApplicationController
   end
 
   def update
+    @spots = Spot.all
     @spot = Spot.find(params[:id])
     
     if @spot.update(spot_params)
@@ -46,7 +50,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:title, :location)
+    params.require(:spot).permit(:title, :location, :spot_id)
   end
 
 end

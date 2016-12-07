@@ -24,6 +24,15 @@
     <%= f.text_field :location %>
   </p>
 
+  <% spots_array = @spots.map { |spot| [spot.title, spot.id] } %>
+  
+  <p>
+    <%= f.label :spot_id %><br>
+    <%= f.select(:spot_id, options_for_select(spots_array), {:include_blank => true}) %>
+  </p>
+
+
+
   <p>
     <%= f.submit %>
   </p>
