@@ -24,4 +24,13 @@ class SurfSession < ApplicationRecord
             :session_summary,
             :spot_id,             presence: true
 
+  WAVESHEIGHTS = [
+    "Flat",
+    "Knee High",
+    "Waist High",
+    "Chest High",
+    "Head Hight",
+    "Over Head"
+  ]
+
 end

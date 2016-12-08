@@ -45,6 +45,11 @@
   </p>
 
   <p>
+    <%= f.label :height %><br>
+    <%= f.select(:height, in: SurfSession::WAVESHEIGHTS) %>
+  </p>
+
+  <p>
     <%= f.label :session_summary %><br>
     <%= f.text_area :session_summary %>
   </p>

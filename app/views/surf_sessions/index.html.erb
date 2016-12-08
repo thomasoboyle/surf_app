@@ -6,6 +6,8 @@
     <th>Surfer</th>
     <th>Date</th>
     <th>Location</th>
+    <th>Average Wave Height</th>
+    <th>Wave Height</th>
   </tr>
 
   <% @surf_sessions.each do |surf_session| %>
@@ -13,6 +15,8 @@
       <td><%= surf_session&.surfer %></td>
       <td><%= surf_session&.date %></td>
       <td><%= surf_session.spot&.title %></td>
+      <td><%= surf_session&.average_wave_height %></td>
+      <td><%= surf_session&.height %></td>
       <td><%= link_to 'Show', surf_session_path(surf_session) %></td>
       <td><%= link_to 'Edit', edit_surf_session_path(surf_session) %></td>
       <td><%= link_to 'Delete', surf_session_path(surf_session),
