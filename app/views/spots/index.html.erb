@@ -4,6 +4,7 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>City</th>
     <th>Location</th>
   </tr>
 
@@ -11,6 +12,7 @@
     <tr>
       <td><%= spot.title %></td>
       <td><%= spot.location %></td>
+      <td><%= spot.parent_title %></td>
       <td><%= link_to 'Show', spot_path(spot) %></td>
       <td><%= link_to 'Edit', edit_spot_path(spot) %></td>
       <td><%= link_to 'Destroy', spot_path(spot),
