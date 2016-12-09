@@ -12,6 +12,7 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  surfer              :string
+#  height              :text
 #
 
 class SurfSession < ApplicationRecord
@@ -23,5 +24,13 @@ class SurfSession < ApplicationRecord
             :average_wave_height,
             :session_summary,
             :spot_id,             presence: true
+
+  enum average_wave_height: [:flat, 
+                            :knee_high,
+                            :waist_high,
+                            :chest_high, 
+                            :head_high, 
+                            :overhead 
+                           ]
 
 end
