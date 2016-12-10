@@ -16,18 +16,13 @@
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @surf_session.date %>
-</p>
-
-<p>
   <strong>Start Time:</strong>
-  <%= @surf_session.start_time %>
+  <%= @surf_session.start_time.strftime("%I:%M %p") %>
 </p>
 
 <p>
-  <strong>End Time:</strong>
-  <%= @surf_session.end_time %>
+  <strong>Sessions length:</strong>
+  <%= distance_of_time_in_words(@surf_session.start_time, @surf_session.end_time) %>
 </p>
 
 <p>
