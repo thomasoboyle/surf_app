@@ -12,7 +12,7 @@
   <% @surf_sessions.each do |surf_session| %>
     <tr>
       <td><%= surf_session&.surfer %></td>
-      <td><%= time_ago_in_words(surf_session&.date) + ' ago' %></td>
+      <td><%= surf_session&.date.strftime("%A, %B %d, %G") %></td>
       <td><%= surf_session.spot&.title %></td>
       <td><%= surf_session&.average_wave_height.humanize %></td>
       <td><%= link_to 'Show', surf_session_path(surf_session) %></td>
