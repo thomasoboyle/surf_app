@@ -42,7 +42,11 @@
   <p>
     <%= f.label :average_wave_height %><br>
     <%= f.select :average_wave_height, SurfSession.average_wave_heights.to_a.map{ |key_and_index| [key_and_index[0].humanize, key_and_index[0]] } %>
+  </p>
 
+  <p>
+    <%= f.label :surf_conditions %><br>
+    <%= f.select :surf_conditions, SurfSession.surf_conditions.to_a.map{ |key_and_index| [key_and_index[0].humanize, key_and_index[0]] } %>
   </p>
 
   <p>

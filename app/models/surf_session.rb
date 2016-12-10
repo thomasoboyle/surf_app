@@ -12,6 +12,7 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  surfer              :string
+#  surf_conditions     :integer
 #
 
 class SurfSession < ApplicationRecord
@@ -31,5 +32,12 @@ class SurfSession < ApplicationRecord
                             :head_high, 
                             :overhead 
                            ]
+
+  enum surf_conditions:     [:poor,
+                             :fair,
+                             :good,
+                             :epic
+                           ]
+
 
 end
