@@ -12,7 +12,6 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  surfer              :string
-#  height              :text
 #
 
 class SurfSession < ApplicationRecord
