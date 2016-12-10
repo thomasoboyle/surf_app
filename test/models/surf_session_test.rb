@@ -12,6 +12,7 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  surfer              :string
+#  surf_conditions     :integer
 #
 
 require 'test_helper'
