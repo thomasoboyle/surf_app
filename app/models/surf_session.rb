@@ -12,7 +12,8 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  surfer              :string
-#  surf_conditions     :integer
+#  surf_conditions     :integer          default("poor"), not null
+#  consistency         :integer
 #
 
 class SurfSession < ApplicationRecord
@@ -33,10 +34,18 @@ class SurfSession < ApplicationRecord
                             :overhead 
                            ]
 
-  enum surf_conditions:     [:poor,
-                             :fair,
-                             :good,
-                             :epic
+  enum surf_conditions:    [:poor,
+                            :fair,
+                            :good,
+                            :epic
+                           ]
+
+  enum consistency:        [:no_waves,
+                            :very_inconsistent,
+                            :inconsistent,
+                            :fair_about_of_waves,
+                            :consistent,
+                            :pumping
                            ]
 
 

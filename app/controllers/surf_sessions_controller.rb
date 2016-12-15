@@ -55,7 +55,8 @@ class SurfSessionsController < ApplicationController
         :spot_id, 
         :surfer,
         :height,
-        :surf_conditions
+        :surf_conditions,
+        :consistency
       )
   end
 

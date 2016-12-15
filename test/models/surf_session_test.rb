@@ -12,7 +12,8 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  surfer              :string
-#  surf_conditions     :integer
+#  surf_conditions     :integer          default("poor"), not null
+#  consistency         :integer
 #
 
 require 'test_helper'
