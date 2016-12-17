@@ -1,27 +1,29 @@
 <h1>Surf Sessions</h1>
 <%= link_to 'Create a surf session', new_surf_session_url %>
-<h1> </h1>
-<table class ="table">
-  <tr>
-    <th>Surfer</th>
-    <th>Date</th>
-    <th>Location</th>
-    <th>Average Wave Height</th>
-  </tr>
 
-  <% @surf_sessions.each do |surf_session| %>
+<div class = "container-fluid">
+  <table class = "table">
     <tr>
-      <td><%= surf_session&.surfer %></td>
-      <td><%= surf_session&.date.strftime("%D") %></td>
-      <td><%= surf_session.spot&.title %></td>
-      <td><%= surf_session&.average_wave_height.humanize %></td>
-      <td><%= link_to 'Show', surf_session_path(surf_session) %></td>
-      <td><%= link_to 'Edit', edit_surf_session_path(surf_session) %></td>
-      <td><%= link_to 'Delete', surf_session_path(surf_session),
-              method: :delete,
-              data: { confirm: 'Are you sure you want to delete this surf session?' } %></td>
+      <th>Surfer</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Average Wave Height</th>
     </tr>
-  <% end %>
-</table>
 
-<%= link_to 'About', page_path('about'), class: "btn btn-default btn-xs" %>
+    <% @surf_sessions.each do |surf_session| %>
+      <tr>
+        <td><%= surf_session&.surfer %></td>
+        <td><%= surf_session&.date.strftime("%D") %></td>
+        <td><%= surf_session.spot&.title %></td>
+        <td><%= surf_session&.average_wave_height.humanize %></td>
+        <td><%= link_to 'Show', surf_session_path(surf_session) %></td>
+        <td><%= link_to 'Edit', edit_surf_session_path(surf_session) %></td>
+        <td><%= link_to 'Delete', surf_session_path(surf_session),
+                method: :delete,
+                data: { confirm: 'Are you sure you want to delete this surf session?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'About', page_path('about'), class: "btn btn-default btn-xs" %>
+</div>
