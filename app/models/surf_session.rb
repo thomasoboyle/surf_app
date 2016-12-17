@@ -43,7 +43,7 @@ class SurfSession < ApplicationRecord
   enum consistency:        [:no_waves,
                             :very_inconsistent,
                             :inconsistent,
-                            :fair_about_of_waves,
+                            :fair_amout_of_waves,
                             :consistent,
                             :pumping
                            ]
