@@ -1,12 +1,15 @@
-<p>
-  <strong>Title:</strong>
-  <%= @spot.title %>
-</p>
+<div class = "container-fluid">
+  <h2>Surf Spot</h2>
+  <p>
+    <strong>Title:</strong>
+    <%= @spot.title %>
+  </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @spot.location %>
-</p>
+  <p>
+    <strong>Location:</strong>
+    <%= @spot.location %>
+  </p>
 
-<%= link_to 'View All Spots', spots_path %>
-<%= link_to 'Edit this Spot', edit_spot_path %>
+  <%= link_to 'View All Spots', spots_path %>
+  <%= link_to 'Edit this Spot', edit_spot_path %>
+</div>
