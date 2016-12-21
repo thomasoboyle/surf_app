@@ -42,6 +42,11 @@
   </p>
 
   <p>
+    <strong>Overall Rating:</strong>
+    <%= @surf_session.session_rating&.humanize %>
+  </p>
+
+  <p>
     <strong>Session Summary:</strong>
     <%= @surf_session.session_summary %>
   </p>

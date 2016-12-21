@@ -55,6 +55,11 @@
   </p>
 
   <p>
+    <%= f.label :session_rating %><br>
+    <%= f.select :session_rating, SurfSession.session_ratings.to_a.map{ |key_and_index| [key_and_index[0].humanize, key_and_index[0]] } %>
+  </p>
+
+  <p>
     <%= f.label :session_summary %><br>
     <%= f.text_area :session_summary %>
   </p>

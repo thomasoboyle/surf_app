@@ -13,7 +13,8 @@
 #  updated_at          :datetime         not null
 #  surfer              :string
 #  surf_conditions     :integer          default("poor"), not null
-#  consistency         :integer
+#  consistency         :integer          default("no_waves"), not null
+#  session_rating      :integer          default("one_star"), not null
 #
 
 class SurfSession < ApplicationRecord
@@ -47,6 +48,13 @@ class SurfSession < ApplicationRecord
                             :consistent,
                             :pumping
                            ]
+
+  enum session_rating:     [:one_star,
+                            :two_stars,
+                            :three_stars,
+                            :four_stars,
+                            :five_stars
+                          ]
 
 
 end

@@ -56,7 +56,8 @@ class SurfSessionsController < ApplicationController
         :surfer,
         :height,
         :surf_conditions,
-        :consistency
+        :consistency,
+        :session_rating
       )
   end
 
