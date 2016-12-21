@@ -28,22 +28,22 @@
 
   <p>
     <strong>Average Wave Height:</strong>
-    <%= @surf_session.average_wave_height.humanize %>
+    <%= @surf_session.average_wave_height.titleize %>
   </p>
 
   <p>
     <strong>Conditions:</strong>
-    <%= @surf_session.surf_conditions&.humanize %>
+    <%= @surf_session.surf_conditions&.titleize %>
   </p>
 
   <p>
     <strong>Consistency:</strong>
-    <%= @surf_session.consistency&.humanize %>
+    <%= @surf_session.consistency&.titleize %>
   </p>
 
   <p>
     <strong>Overall Rating:</strong>
-    <%= @surf_session.session_rating&.humanize %>
+    <%= @surf_session.session_rating&.titleize %>
   </p>
 
   <p>
