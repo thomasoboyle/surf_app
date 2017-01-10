@@ -1,6 +1,6 @@
 class SurfSessionsController < ApplicationController
   def index
-    @surf_sessions = SurfSession.order :date
+    @surf_sessions = SurfSession.order(:date).reverse 
   end
 
   def show
