@@ -1,6 +1,6 @@
 class SurfSessionsController < ApplicationController
   def index
-    @surf_sessions = SurfSession.order(:date).reverse 
+    @surf_sessions = SurfSession.paginate(:page => params[:page], :per_page => 20).order(date: :desc)
   end
 
   def show

@@ -3,6 +3,10 @@
 <h1>Surf Sessions</h1>
 <%= link_to 'Create a surf session', new_surf_session_url %>
 
+<p>
+ <%= will_paginate %>
+</p>
+
   <table class = "table-condensed">
     <tr>
       <th>Surfer</th>
@@ -11,6 +15,7 @@
       <th>Average Wave Height</th>
       <th>Session Rating</th>
     </tr>
+
 
     <% @surf_sessions.each do |surf_session| %>
       <tr>
@@ -26,7 +31,12 @@
                 data: { confirm: 'Are you sure you want to delete this surf session?' } %></td>
       </tr>
     <% end %>
+
   </table>
+
+<p>
+ <%= will_paginate %>
+</p>
 
   <%= link_to 'About', page_path('about'), class: "btn btn-default btn-xs" %>
 </div>
