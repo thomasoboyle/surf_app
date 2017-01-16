@@ -15,11 +15,7 @@
   <% end %>
 
   <p>
-  <%= grouped_options =
-[["North America", [["United States", "US"], "Canada"]], ["Europe", ["Denmark", "Germany", "France"]]] %>
-</p>
-  <p>
- <select> <%= grouped_options_for_select(grouped_options) %> </select>
+   <select><%=grouped_options_for_select(@grouped_options)%></select>
   </p>
 
   <p>

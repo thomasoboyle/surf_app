@@ -9,10 +9,14 @@ class SurfSessionsController < ApplicationController
 
   def new
     @surf_session = SurfSession.new
+    @grouped_options = Spot.all.map{|spot| [spot.location,
+                                [spot.title]]}
   end
 
   def edit
     @surf_session = SurfSession.find(params[:id])
+    @grouped_options = Spot.all.map{|spot| [spot.location,
+                                [spot.title]]}
   end
 
   def create
