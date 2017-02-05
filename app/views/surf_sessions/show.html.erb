@@ -51,9 +51,13 @@
     <%= @surf_session.session_summary %>
   </p>
 
-  <h3>Comments (<%= @surf_session.comments.size %>)</h3>
-  <%= render @surf_session.comments %>
+  <% if @surf_session.comments.size > 0 %>
+    <h3>Comments (<%= @surf_session.comments.size %>) </h3>
+  <% else %>
+    <h3>Comments</h3>
+  <% end %>
 
+  <%= render @surf_session.comments %>
 
   <h4>Add a comment:</h4>
   <%= render 'comments/form' %>
