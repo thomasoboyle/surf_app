@@ -1,0 +1,7 @@
+<p>
+  <% if @surf_session.image.exists? %>
+    <%= image_tag @surf_session.image.url %><br>
+  <% end %>
+  <%= f.label :image, "Attach a New Image" %><br>
+  <%= f.file_field :image %>
+</p>

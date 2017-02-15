@@ -15,11 +15,14 @@
 #  surf_conditions     :integer          default("poor"), not null
 #  consistency         :integer          default("no_waves"), not null
 #  session_rating      :integer          default("one_star"), not null
+#  like_count          :integer          default(0), not null
+#  attachment_id       :integer
 #
 
 class SurfSession < ApplicationRecord
   belongs_to :spot
   has_many   :comments, dependent: :destroy
+  has_many   :attachments
    validates :date,
             :start_time,
             :end_time,
