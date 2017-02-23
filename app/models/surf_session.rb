@@ -15,11 +15,15 @@
 #  surf_conditions     :integer          default("poor"), not null
 #  consistency         :integer          default("no_waves"), not null
 #  session_rating      :integer          default("one_star"), not null
+#  like_count          :integer          default(0), not null
+#  attachment_id       :integer
 #
 
 class SurfSession < ApplicationRecord
-  belongs_to :spot
-  has_many   :comments, dependent: :destroy
+  has_attached_file         :image, styles: {medium: "300x300", thumb: "100X100"}
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+  belongs_to                :spot
+  has_many                  :comments, dependent: :destroy
    validates :date,
             :start_time,
             :end_time,
