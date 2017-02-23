@@ -1,4 +1,5 @@
-<%= form_for([@surf_session, @surf_session.attachments.build]) do |f| %>
+
+<%= form_for(new_surf_session_attachment_path(@surf_session)) do |f| %>
   <p>
     <%= f.label :image, "Attach an Image" %><br>
     <%= f.file_field :image %>

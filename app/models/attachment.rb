@@ -9,6 +9,7 @@
 #  image_updated_at   :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  surf_session_id    :integer
 #
 
 class Attachment < ApplicationRecord

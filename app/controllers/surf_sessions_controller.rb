@@ -16,6 +16,7 @@ class SurfSessionsController < ApplicationController
   end
 
   def create
+    #binding.pry 
     @surf_session = SurfSession.new(surf_params)
 
      if @surf_session.save
@@ -57,7 +58,8 @@ class SurfSessionsController < ApplicationController
         :height,
         :surf_conditions,
         :consistency,
-        :session_rating
+        :session_rating,
+        images: []
       )
   end
 

@@ -60,4 +60,7 @@ class SurfSession < ApplicationRecord
                           ]
 
 
+  def images=(image_params)
+    binding.pry
+  end
 end
