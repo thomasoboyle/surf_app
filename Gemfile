@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'paperclip'
+
 gem 'pry'
 
 gem 'high_voltage', '~> 3.0.0'
