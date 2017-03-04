@@ -66,15 +66,7 @@
   </p> 
 
   <p>
-    <% if @surf_session.image.exists? %>
-      <%= f.label :images %><br>
-      <%= image_tag @surf_session.image.url(:medium) %><br>
-    <% end %>
-      <%= f.label :image, "Attach an Image" %><br>
-    <%= f.file_field :image %>
-  </p>
-
-  <p>
+    <%= render @surf_session.attachments %>
     <%= f.label :image, "Attach an Image" %><br>
     <%= f.file_field :image, :multiple => true %>
   </p>
