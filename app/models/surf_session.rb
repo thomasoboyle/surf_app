@@ -17,6 +17,10 @@
 #  session_rating      :integer          default("one_star"), not null
 #  like_count          :integer          default(0), not null
 #  attachment_id       :integer
+#  image_file_name     :string
+#  image_content_type  :string
+#  image_file_size     :integer
+#  image_updated_at    :datetime
 #
 
 class SurfSession < ApplicationRecord
@@ -59,8 +63,4 @@ class SurfSession < ApplicationRecord
                             :five_stars
                           ]
 
-
-  def images=(image_params)
-    binding.pry
-  end
 end
