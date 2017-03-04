@@ -16,7 +16,6 @@ class SurfSessionsController < ApplicationController
   end
 
   def create
-    #binding.pry 
     @surf_session = SurfSession.new(surf_params)
 
      if @surf_session.save
@@ -28,6 +27,10 @@ class SurfSessionsController < ApplicationController
 
   def update
     @surf_session = SurfSession.find(params[:id])
+
+    params[:surf_session][:image].each do |image|
+      @surf_session.attachments.create(:image => image)
+    end
 
     if @surf_session.update(surf_params)
       redirect_to @surf_session
@@ -59,7 +62,7 @@ class SurfSessionsController < ApplicationController
         :surf_conditions,
         :consistency,
         :session_rating,
-        images: []
+        :image
       )
   end
 
