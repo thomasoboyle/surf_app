@@ -51,11 +51,8 @@
     <%= @surf_session.session_summary %>
   </p>
 
-  <p>
-    <% if @surf_session.image.exists? %>
-      <%= image_tag @surf_session.image.url(:medium) %>
-    <% end %>
-  </p>
+  <%= render @surf_session.attachments %>
+
 
   <% if @surf_session.comments.size > 0 %>
     <h3>Comments (<%= @surf_session.comments.size %>) </h3>

@@ -17,13 +17,16 @@
 #  session_rating      :integer          default("one_star"), not null
 #  like_count          :integer          default(0), not null
 #  attachment_id       :integer
+#  image_file_name     :string
+#  image_content_type  :string
+#  image_file_size     :integer
+#  image_updated_at    :datetime
 #
 
 class SurfSession < ApplicationRecord
-  has_attached_file         :image, styles: {medium: "300x300", thumb: "100X100"}
-  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
-  belongs_to                :spot
-  has_many                  :comments, dependent: :destroy
+  belongs_to :spot
+  has_many   :comments, dependent: :destroy
+  has_many   :attachments
    validates :date,
             :start_time,
             :end_time,
@@ -59,6 +62,5 @@ class SurfSession < ApplicationRecord
                             :four_stars,
                             :five_stars
                           ]
-
 
 end

@@ -1,5 +1,6 @@
 <%= form_for(@surf_session, html: {multipart: true}) do |f| %>
 
+
   <% if @surf_session.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -71,6 +72,11 @@
     <% end %>
       <%= f.label :image, "Attach an Image" %><br>
     <%= f.file_field :image %>
+  </p>
+
+  <p>
+    <%= f.label :image, "Attach an Image" %><br>
+    <%= f.file_field :image, :multiple => true %>
   </p>
  
   <p>
