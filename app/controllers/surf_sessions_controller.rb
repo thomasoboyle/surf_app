@@ -46,6 +46,7 @@ class SurfSessionsController < ApplicationController
     redirect_to surf_sessions_path
   end
 
+
   private
 
   def surf_params
@@ -62,7 +63,8 @@ class SurfSessionsController < ApplicationController
         :surf_conditions,
         :consistency,
         :session_rating,
-        :image
+        :image,
+        :tag_list
       )
   end
 
