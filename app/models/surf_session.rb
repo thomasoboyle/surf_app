@@ -24,9 +24,12 @@
 #
 
 class SurfSession < ApplicationRecord
-  belongs_to :spot
-  has_many   :comments, dependent: :destroy
-  has_many   :attachments
+  belongs_to  :spot
+  has_many    :comments, dependent: :destroy
+  has_many    :attachments
+  has_many    :taggings
+  has_many    :tags, through: :taggings
+
    validates :date,
             :start_time,
             :end_time,
