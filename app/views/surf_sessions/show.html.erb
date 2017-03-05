@@ -51,6 +51,13 @@
     <%= @surf_session.session_summary %>
   </p>
 
+  <p>
+    Tags:
+    <% @surf_session.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag) %>
+    <% end %>
+  </p>
+
   <%= render @surf_session.attachments %>
 
 

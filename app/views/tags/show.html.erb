@@ -1,0 +1,11 @@
+<div class = "container-fluid">
+<h1>Tags</h1>
+  <h3>Surf Sessions Tagged with <%= @tag.name %></h3>
+
+  <ul>
+    <% @tag.surf_sessions.each do |surf_session| %>
+      <li><%= link_to surf_session.date, surf_session_path(surf_session) %> <%= surf_session.surfer %> <%= surf_session.spot.title %>
+      </li>
+    <% end %>
+  </ul>
+</div>

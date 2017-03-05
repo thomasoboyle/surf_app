@@ -1,0 +1,14 @@
+<div class = "container-fluid">
+
+<h1>Tags</h1>
+
+<table class='table-condensed'>
+
+  <% @tags.each do |tag| %>
+    <tr>
+      <td><%= link_to tag.name, tag_path(tag) %></td>
+    </tr>
+  <% end %>
+</table>
+
+</div>

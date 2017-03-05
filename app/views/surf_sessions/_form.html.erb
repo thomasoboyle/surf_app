@@ -66,6 +66,11 @@
   </p> 
 
   <p>
+    <%= f.label :tag_list %><br>
+    <%= f.text_field :tag_list %>
+  </p> 
+
+  <p>
     <%= render @surf_session.attachments %>
     <%= f.label :image, "Attach an Image" %><br>
     <%= f.file_field :image, :multiple => true %>
