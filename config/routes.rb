@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
+  resources :surf_sessions do
+    resources :comments
+  end
+
+  resources :tags
+  
   resources :spots
 
   resources :attachments
 
-  resources :surf_sessions do
-    resources :comments
-  end
 
   root 'surf_sessions#index'
 
