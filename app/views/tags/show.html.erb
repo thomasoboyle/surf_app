@@ -1,6 +1,6 @@
 <div class = "container-fluid">
-<h1>Tags</h1>
-  <h3>Surf Sessions Tagged with <%= @tag.name %></h3>
+<h1>Tags: <%= @tag.name %></h1>
+  <h3>Surf Sessions Tagged with "<%= @tag.name %>"</h3>
 
   <ul>
     <% @tag.surf_sessions.each do |surf_session| %>
@@ -8,4 +8,8 @@
       </li>
     <% end %>
   </ul>
+
+  <%= link_to 'View All Tags', tags_path %></br>
+  <%= link_to 'View All Surf Sessions', surf_sessions_path %>
+
 </div>
