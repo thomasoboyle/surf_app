@@ -4,11 +4,13 @@
 
 <table class='table-condensed'>
 
-  <% @tags.each do |tag| %>
+  <% @tags.uniq.each do |tag| %>
     <tr>
       <td><%= link_to tag.name, tag_path(tag) %></td>
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'View All Surf Sessions', surf_sessions_path %>
 
 </div>
