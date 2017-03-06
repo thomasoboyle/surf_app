@@ -38,7 +38,7 @@ class SurfSession < ApplicationRecord
             :spot_id,             presence: true
 
   def tag_list
-    tags.join(", ")
+    tags.map(&:name).join(", ")
   end
 
   def tag_list=(tags_string)

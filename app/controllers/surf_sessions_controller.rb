@@ -28,7 +28,7 @@ class SurfSessionsController < ApplicationController
   def update
     @surf_session = SurfSession.find(params[:id])
 
-    params[:surf_session][:image].each do |image|
+    params[:surf_session].fetch(:image, []).each do |image|
       @surf_session.attachments.create(:image => image)
     end
 
