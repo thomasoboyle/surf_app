@@ -6,7 +6,7 @@
 
   <% @tags.uniq.each do |tag| %>
     <tr>
-      <td><%= link_to tag.name, tag_path(tag) %> (<%= tag.taggings.count %>)</td>
+      <td><%= link_to tag.name.titleize, tag_path(tag) %> (<%= tag.taggings.count %>)</td>
     </tr>
   <% end %>
 </table>
