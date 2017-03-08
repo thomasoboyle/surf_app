@@ -14,6 +14,7 @@
       <th>Location</th>
       <th>Average Wave Height</th>
       <th>Session Rating</th>
+      <!-- <th>Tags</th> -->
     </tr>
 
 
@@ -24,6 +25,9 @@
         <td><%= surf_session.spot&.title %></td>
         <td><%= surf_session&.average_wave_height.titleize %></td>
         <td><%= surf_session&.session_rating.titleize %></td>
+
+        <%#= @surf_session&.tags&.each(&:name) if @surf_session.tags %>
+
         <td><%= link_to 'Show', surf_session_path(surf_session) %></td>
         <td><%= link_to 'Edit', edit_surf_session_path(surf_session) %></td>
         <td><%= link_to 'Delete', surf_session_path(surf_session),
