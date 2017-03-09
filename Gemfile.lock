@@ -42,6 +42,7 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
     arel (7.1.4)
+    bugsnag (5.2.0)
     builder (3.2.2)
     byebug (9.0.6)
     climate_control (0.1.0)
@@ -176,6 +177,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bugsnag
   byebug
   coffee-rails (~> 4.2)
   high_voltage (~> 3.0.0)
