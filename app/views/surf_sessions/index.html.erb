@@ -25,9 +25,7 @@
         <td><%= surf_session.spot&.title %></td>
         <td><%= surf_session&.average_wave_height.titleize %></td>
         <td><%= surf_session&.session_rating.titleize %></td>
-
-        <td><%= surf_session&.tag_list if surf_session.tag_list %>
-
+        <td><%= tag_links(surf_session.tags) if surf_session.tags %></td>
         <td><%= link_to 'Show', surf_session_path(surf_session) %></td>
         <td><%= link_to 'Edit', edit_surf_session_path(surf_session) %></td>
         <td><%= link_to 'Delete', surf_session_path(surf_session),
