@@ -15,7 +15,7 @@
 class Spot < ApplicationRecord
   has_many :surf_sessions
   validates :title,     presence: true,
-                        uniqueness: true,
+                        uniqueness: { case_sensitive: false },
                         length: { minimum: 5,
                         too_short: "#{:title} must be at least %{count} characters long" }
   validates :location,  presence: true,
