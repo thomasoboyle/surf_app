@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  root 'surf_sessions#index'
+
+  get  '/sign_up', to: 'users#new'
+
   resources :surf_sessions do
     resources :comments
   end
@@ -10,7 +14,8 @@ Rails.application.routes.draw do
 
   resources :attachments
 
+  resources :users
 
-  root 'surf_sessions#index'
+
 
 end

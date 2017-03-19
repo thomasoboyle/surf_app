@@ -10,6 +10,8 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'annotate'
 
+gem 'bcrypt', '3.1.11'
+
 gem 'bugsnag'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
