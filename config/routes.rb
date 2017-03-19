@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   root 'surf_sessions#index'
 
   resources :surf_sessions do
@@ -13,8 +14,9 @@ Rails.application.routes.draw do
   resources :users
   
   get        '/sign_up', to: 'users#new'
-  get        '/login',   to: 'sessions#new'
-  post       '/login',   to: 'sessions#create'
-  delete     '/logout',  to: 'sessions#destroy'
+  get        '.login'    to: 'user_sessions/new'
+  get        '/login',   to: 'user_sessions#new'
+  post       '/login',   to: 'user_sessions#create'
+  delete     '/logout',  to: 'user_sessions#destroy'
 
 end
