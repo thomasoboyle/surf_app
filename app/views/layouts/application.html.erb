@@ -12,7 +12,6 @@
   </head>
 
   <body>
-  <header>
     <header class="navbar navbar-inverse">
       <div class="navbar-class">
         <div class="container">
@@ -22,14 +21,13 @@
           <li><%=link_to "Surf Sessions", surf_sessions_path %></li>
           <li><%=link_to "Surf Spots", spots_path %></li>
           <li><%=link_to "Tags", tags_path %></li>
-          <li><%=link_to "Sign Up", sign_up_url %></li>
-          <li><%#=link_to "Log In", new_user_path %></li>
-          </li>
+          <li><%= link_to "Users", '#' %></li>
+          <li><%= link_to "log In", login_path %></li>
+          <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
         </ul>
         </div>
       </div>
     </header>
-  </header>
 
 
 
