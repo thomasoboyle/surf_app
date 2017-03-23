@@ -1,0 +1,16 @@
+<div class="Container-fluid">
+  <h1>Surfers</h1>
+
+  <table class='table-condensed'>
+    <tr>
+      <th>Name</th>
+    </tr>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
