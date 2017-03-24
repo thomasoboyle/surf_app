@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
@@ -21,7 +21,7 @@
           <li><%=link_to "Surf Sessions", surf_sessions_path %></li>
           <li><%=link_to "Surf Spots", spots_path %></li>
           <li><%=link_to "Tags", tags_path %></li>
-          <li><%= link_to "Users", '#' %></li>
+          <li><%= link_to "Users", users_path %></li>
           <% if logged_in? %>
             <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
             <li><%= link_to "Profile", current_user %></li>
