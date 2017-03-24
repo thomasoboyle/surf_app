@@ -1,16 +1,20 @@
-<h1>Log in</h1>
+<div class="container-fluid">
+  <h1>Log In</h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
-  <p>
-  <%= f.label :email %>:<br>
-  <%= f.email_field :email %>
-  </p>
-  <p>
-  <%= f.label :password %>:<br>
-  <%= f.password_field :password %>
-  </p>
-  <%= f.submit "Log in" %>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <p>
+      <%= f.label :email %>:<br>
+      <%= f.email_field :email %>
+    </p>
+    <p>
+      <%= f.label :password %>:<br>
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.submit "Log in" %>
+    </p>
 
-<% end %>
+  <% end %>
 
-<p>New user? <%= link_to "Sign up now!", sign_up_path %></p>
+  <p>New user? <%= link_to "Sign up now!", sign_up_path %></p>
+</div>
