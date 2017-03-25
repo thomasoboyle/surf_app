@@ -11,10 +11,6 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
 
-  def edit
-    @spot = Spot.find(params[:id])
-  end
-
   def create
     @spot = Spot.new(spot_params)
 
@@ -23,6 +19,10 @@ class SpotsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @spot = Spot.find(params[:id])
   end
 
   def update
