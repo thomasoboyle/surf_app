@@ -1,3 +1,22 @@
-<%= @user.name %>, <%= @user.email %><br>
-<%= @user.updated_at %><br>
-<%= Time.now %><br>
+<div class = "container-fluid">
+  <h1>Surfer Profile</h1>
+  <p>
+    <strong>Name</strong><br>
+    <%= @user.name %>
+  </p>
+  <p>
+    <strong>Email</strong><br>
+    <%= @user.email %>
+  </p>
+  <p>
+    <strong>Last Updated</strong><br>
+    <%= @user.updated_at %>
+  </p>
+
+  <p>
+    <strong>Time right now</strong><br>
+    <%= Time.now %><br>
+  </p>
+
+  <%= link_to 'Edit Profile', edit_user_path %>
+</div>
