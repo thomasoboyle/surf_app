@@ -26,7 +26,7 @@
         <td><%= surf_session&.average_wave_height.titleize %></td>
         <td><%= surf_session&.session_rating.titleize %></td>
         <td><%= tag_links(surf_session.tags) if surf_session.tags %></td>
-        <td><%= link_to 'Show', surf_session_path(surf_session) %></td>
+        <td><%= link_to 'View', surf_session_path(surf_session) %></td>
         <td><%= link_to 'Edit', edit_surf_session_path(surf_session) %></td>
         <td><%= link_to 'Delete', surf_session_path(surf_session),
                 method: :delete,
@@ -40,7 +40,7 @@
  <%= will_paginate %>
 </p>
 
-  <%= link_to 'Show Surf Sessions by Tag', tags_path %><br>
+  <%= link_to 'View Surf Sessions by Tag', tags_path %><br>
 
   <%= link_to 'About', page_path('about'), class: "btn btn-default btn-xs" %>
   <%#= link_to 'Sign up', sign_up_path, class: "btn btn-default btn-xs" %>
