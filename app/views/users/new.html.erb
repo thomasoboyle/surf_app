@@ -1,4 +1,4 @@
-<div class= "container-fluid">
+<div class='container-fluid'>
 
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -19,6 +19,9 @@
   
   <%= render 'form' %>
 
-  <p>Already a user? <%= link_to "Log in here!", login_path %></p>
+  <br>
+  <p class='container-fluid'>
+    Already a user? <%= link_to "Log in here!", login_path %>
+  </p>
 
 </div>
