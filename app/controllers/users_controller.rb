@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  #before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
   def index
     @users = User.all
   end
@@ -53,5 +54,10 @@ class UsersController < ApplicationController
         flash[:danger] = "Please log in."
         redirect_to login_url
       end
+    end
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(users_path) unless @user == current_user
     end
 end
