@@ -22,12 +22,12 @@
           <li><%=link_to "Surf Spots", spots_path %></li>
           <li><%=link_to "Tags", tags_path %></li>
           <li><%= link_to "Surfers", users_path %></li>
+          <% if logged_in? && admin_user? %>
+            <li><%= link_to "Settings", page_path('settings') %></li>
+          <% end %>
           <% if logged_in? %>
             <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
-            <% if admin_user? %>
-              <li><%= link_to "Settings", '#' %></li>
-            <% end %>
           <% else %>
             <li><%= link_to "Log In", login_path %></li>
           <% end %>
@@ -36,11 +36,8 @@
       </div>
     </header>
 
-
-
-
-
     <%= yield %>
     <%= debug(params) if Rails.env.development? %>
   </body>
+
 </html>
