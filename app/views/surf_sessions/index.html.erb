@@ -28,9 +28,6 @@
         <td><%= tag_links(surf_session.tags) if surf_session.tags %></td>
         <td><%= link_to 'View', surf_session_path(surf_session) %></td>
         <td><%= link_to 'Edit', edit_surf_session_path(surf_session) %></td>
-        <td><%= link_to 'Delete', surf_session_path(surf_session),
-                method: :delete,
-                data: { confirm: 'Are you sure you want to delete this surf session?' } %></td>
       </tr>
     <% end %>
 
