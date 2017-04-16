@@ -18,10 +18,6 @@
     <%= Time.now %><br>
   </p><br>
 
-  <% if logged_in? && current_user? %>
-    <p><%= link_to 'Edit Profile', edit_user_path %><p>
-    <%= link_to 'View All Surfers', users_path %>
-  <% else %>
-    <%= link_to 'View All Surfers', users_path %>
-  <% end %>
+  <p><%= link_to 'Edit Profile', edit_user_path %><p>
+  <%= link_to 'View All Surfers', users_path %>
 </div>
