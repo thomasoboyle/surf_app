@@ -27,7 +27,6 @@
         <td><%= surf_session&.session_rating.titleize %></td>
         <td><%= tag_links(surf_session.tags) if surf_session.tags %></td>
         <td><%= link_to 'View', surf_session_path(surf_session) %></td>
-        <td><%= link_to 'Edit', edit_surf_session_path(surf_session) %></td>
       </tr>
     <% end %>
 
