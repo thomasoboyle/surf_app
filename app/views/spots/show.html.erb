@@ -10,9 +10,17 @@
     <%= @spot.location %>
   </p>
 
-  <%= link_to 'Edit this Spot', edit_spot_path %><br>
-  <%= link_to 'Destroy this Spot', spot_path(@spot),
-      method: :delete,
-      data: { confirm: 'Are you sure?' } %><br>
-  <%= link_to 'View All Spots', spots_path %><br>
+  <% if logged_in? && admin_user? %>
+    <%= link_to 'Edit this Spot', edit_spot_path %><br>
+    <%= link_to 'Destroy this Spot', spot_path(@spot),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %><br>
+    <%= link_to 'View All Spots', spots_path %><br>
+  <% elsif logged_in? %>
+    <%= link_to 'Edit this Spot', edit_spot_path %><br>
+    <%= link_to 'View All Spots', spots_path %><br>
+  <% else %>
+    <%= link_to 'View All Spots', spots_path %><br>
+  <% end %>
+
 </div>
