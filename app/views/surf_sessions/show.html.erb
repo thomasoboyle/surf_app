@@ -72,10 +72,13 @@
   <h4>Add a comment:</h4>
   <%= render 'comments/form' %>
 
-
-  <%= link_to 'Edit Surf Session', edit_surf_session_path %><br>
-  <%= link_to 'Delete Surf Session', surf_session_path(@surf_session),
-                method: :delete,
-                data: { confirm: 'Are you sure you want to delete this surf session?' } %><br>
-  <%= link_to 'View All Surf Sessions', surf_sessions_path %><br>
+  <% if logged_in? %>
+    <%= link_to 'Edit Surf Session', edit_surf_session_path %><br>
+    <%= link_to 'Delete Surf Session', surf_session_path(@surf_session),
+                  method: :delete,
+                  data: { confirm: 'Are you sure you want to delete this surf session?' } %><br>
+    <%= link_to 'View All Surf Sessions', surf_sessions_path %><br>
+  <% else %>
+    <%= link_to 'View All Surf Sessions', surf_sessions_path %><br>
+  <% end %>
 </div>
