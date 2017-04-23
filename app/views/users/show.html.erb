@@ -11,11 +11,6 @@
   <p>
     <strong>Last Updated</strong><br>
     <%= @user.updated_at.strftime("%A, %B %d, %G") %>
-  </p>
-
-  <p>
-    <strong>Time right now</strong><br>
-    <%= Time.now %><br>
   </p><br>
 
   <% if logged_in? && current_user? %>
