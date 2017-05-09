@@ -8,7 +8,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string
-#  admin           :boolean
+#  admin           :boolean          default(FALSE), not null
+#  profile         :text
 #
 
 require 'test_helper'
