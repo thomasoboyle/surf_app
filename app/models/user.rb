@@ -10,6 +10,7 @@
 #  password_digest :string
 #  admin           :boolean          default(FALSE), not null
 #  profile         :text
+#  hometown        :text
 #
 
 class User < ApplicationRecord

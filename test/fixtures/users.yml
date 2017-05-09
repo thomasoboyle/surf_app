@@ -10,6 +10,7 @@
 #  password_digest :string
 #  admin           :boolean          default(FALSE), not null
 #  profile         :text
+#  hometown        :text
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -46,7 +46,8 @@ class UsersController < ApplicationController
           :email,
           :password,
           :password_confirmation,
-          :profile
+          :profile,
+          :hometown
           )
     end
 
