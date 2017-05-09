@@ -45,7 +45,8 @@ class UsersController < ApplicationController
         permit(:name,
           :email,
           :password,
-          :password_confirmation
+          :password_confirmation,
+          :profile
           )
     end
 
