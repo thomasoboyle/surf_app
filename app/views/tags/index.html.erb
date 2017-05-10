@@ -5,9 +5,11 @@
 <table class='table-condensed'>
 
   <% @tags.uniq.each do |tag| %>
-    <tr>
-      <td><%= link_to tag.name.titleize, tag_path(tag) %> (<%= tag.taggings.count %>)</td>
-    </tr>
+    <% if tag.taggings.count > 0 %>
+      <tr>
+        <td><%= link_to tag.name.titleize, tag_path(tag) %> (<%= tag.taggings.count %>)</td>
+      </tr>
+    <% end %>
   <% end %>
 </table>
 
