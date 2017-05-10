@@ -28,7 +28,7 @@ class SurfSession < ApplicationRecord
   has_many    :comments, dependent: :destroy
   has_many    :attachments
   has_many    :taggings
-  has_many    :tags, through: :taggings
+  has_many    :tags, through: :taggings, dependent: :destroy
 
    validates :date,
             :start_time,
