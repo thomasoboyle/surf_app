@@ -13,4 +13,5 @@
 #
 
 class Surfboard < ApplicationRecord
+  belongs_to :users
 end
