@@ -1,7 +1,7 @@
 class SurfboardsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
-    @surfboard = @user.surfboard.create(surfboard_params)
+    @surfboard = @user.surfboards.create(surfboard_params)
     redirect_to user_path(@user)
   end
 
@@ -9,11 +9,11 @@ class SurfboardsController < ApplicationController
 
   def surfboard_params
     params.
-    require.(:surfboard).
-    permit(:surfboard_brand,
-      :surfboard_lenght,
-      :surfboard_type,
-      :surfboard_rating
+    require(:surfboard).
+      permit(:surfboard_brand,
+        :surfboard_lenght,
+        :surfboard_type,
+        :surfboard_rating
     )
   end
 

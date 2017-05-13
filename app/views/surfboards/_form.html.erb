@@ -1,0 +1,9 @@
+<%= form_for([@user, @user.surfboards.build]) do |f| %>
+  <p>
+    <%= f.label :surfboard_brand %><br>
+    <%= f.text_field :surfboard_brand %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
