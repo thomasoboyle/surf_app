@@ -8,10 +8,9 @@ class SurfboardsController < ApplicationController
   private
 
   def surfboard_params
-    params.
-    require(:surfboard).
+    params.require(:surfboard).
       permit(:surfboard_brand,
-        :surfboard_lenght,
+        :surfboard_length,
         :surfboard_type,
         :surfboard_rating
     )
