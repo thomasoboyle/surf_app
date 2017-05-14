@@ -21,6 +21,12 @@
     <%= @user.updated_at.strftime("%A, %B %d, %G") %>
   </p><br>
 
+  <%= @user.surfboards.count %>
+  <%= render @user.surfboards %>
+
+  <h4>Quiver</h4>
+  <%= render 'surfboards/form' %>
+
   <% if logged_in? && current_user? %>
     <p><%= link_to 'Edit Profile', edit_user_path %><p>
     <%= link_to 'View All Surfers', users_path %>
