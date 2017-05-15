@@ -27,7 +27,7 @@ class SpotsController < ApplicationController
 
   def update
     @spot = Spot.find(params[:id])
-    
+
     if @spot.update(spot_params)
       redirect_to @spot
     else
@@ -42,11 +42,9 @@ class SpotsController < ApplicationController
     redirect_to spots_path
   end
 
-
   private
 
   def spot_params
     params.require(:spot).permit(:title, :location)
   end
-
 end
