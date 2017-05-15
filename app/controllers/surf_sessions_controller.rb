@@ -46,18 +46,18 @@ class SurfSessionsController < ApplicationController
     redirect_to surf_sessions_path
   end
 
-
   private
 
   def surf_params
-    params.
-      require(:surf_session).
-      permit(:date, 
-        :start_time, 
-        :end_time, 
+    params
+      .require(:surf_session)
+      .permit(
+        :date,
+        :start_time,
+        :end_time,
         :average_wave_height,
-        :session_summary, 
-        :spot_id, 
+        :session_summary,
+        :spot_id,
         :surfer,
         :height,
         :surf_conditions,
@@ -67,5 +67,4 @@ class SurfSessionsController < ApplicationController
         :tag_list
       )
   end
-
 end
