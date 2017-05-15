@@ -18,7 +18,7 @@ class SurfSessionsController < ApplicationController
   def create
     @surf_session = SurfSession.new(surf_params)
 
-     if @surf_session.save
+    if @surf_session.save
       redirect_to @surf_session
     else
       render 'new'
