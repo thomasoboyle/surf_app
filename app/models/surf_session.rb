@@ -30,20 +30,20 @@ class SurfSession < ApplicationRecord
   has_many    :taggings
   has_many    :tags, through: :taggings, dependent: :destroy
 
-   validates :date,
+  validates :date,
             :start_time,
             :end_time,
             :average_wave_height,
             :session_summary,
-            :spot_id,             presence: true
+            :spot_id, presence: true
 
   def tag_list
-    tags.map(&:name).join(", ")
+    tags.map(&:name).join(', ')
   end
 
   def tag_list=(tags_string)
-    tag_names = tags_string.split(",").collect{|s| s.strip.downcase}.uniq
-    new_or_found_tags = tag_names.collect {|name| Tag.find_or_create_by(name: name)}
+    tag_names = tags_string.split(',').collect { |s| s.strip.downcase }.uniq
+    new_or_found_tags = tag_names.collect { |name| Tag.find_or_create_by(name: name) }
     self.tags = new_or_found_tags
   end
 
@@ -51,21 +51,24 @@ class SurfSession < ApplicationRecord
     name
   end
 
-  enum average_wave_height: [:flat, 
+  enum average_wave_height: [
+                            :flat,
                             :knee_high,
                             :waist_high,
-                            :chest_high, 
-                            :head_high, 
-                            :overhead 
-                           ]
+                            :chest_high,
+                            :head_high,
+                            :overhead
+                            ]
 
-  enum surf_conditions:    [:poor,
+  enum surf_conditions:    [
+                            :poor,
                             :fair,
                             :good,
                             :epic
                            ]
 
-  enum consistency:        [:no_waves,
+  enum consistency:        [
+                            :no_waves,
                             :very_inconsistent,
                             :inconsistent,
                             :fair_amout_of_waves,
@@ -73,12 +76,12 @@ class SurfSession < ApplicationRecord
                             :pumping
                            ]
 
-  enum session_rating:     [:one_star,
+  enum session_rating:     [
+                            :one_star,
                             :two_stars,
                             :three_stars,
                             :four_stars,
                             :five_stars
-                          ]
-
+                            ]
 
 end
