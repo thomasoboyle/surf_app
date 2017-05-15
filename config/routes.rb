@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-
-
   root 'surf_sessions#index'
 
   resources :surf_sessions do
@@ -14,10 +11,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :surfboards
   end
-  
+
   get        '/sign_up', to: 'users#new'
   get        '/login',   to: 'user_sessions#new'
   post       '/login',   to: 'user_sessions#create'
   delete     '/logout',  to: 'user_sessions#destroy'
-
 end
