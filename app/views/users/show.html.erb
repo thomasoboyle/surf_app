@@ -1,4 +1,4 @@
-<div class = "container-fluid">
+  <div class = "container-fluid">
   <h1><%= @user.name %>'s Profile</h1>
   <p>
     <strong>Name</strong><br>
@@ -21,9 +21,16 @@
     <%= @user.updated_at.strftime("%A, %B %d, %G") %>
   </p><br>
 
+  <% if @user.surfboards.size > 0 %>
+    <h4>Quiver (<%= @user.surfboards.size %>)</h4>
+  <% else %>
+    <h4>Quiver</h4>
+  <% end %>
+
   <%= render @user.surfboards %>
 
-  <h4>Quiver</h4>
+  <h4>Add a board</h4>
+
   <%= render 'surfboards/form' %>
 
   <% if logged_in? && current_user? %>
