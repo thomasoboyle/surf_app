@@ -9,24 +9,12 @@
   </p>
   <p>
     <%= f.label :surfboard_type %><br>
-    <%= f.text_field :surfboard_type %>
-  </p>
-
-  <p>
-    <%= f.label :surfboard_type %><br>
     <%= f.select :surfboard_type, Surfboard.surfboard_types.to_a.map{ |key_and_index| [key_and_index[0].titleize, key_and_index[0]]} %>
   </p>
-
-
-
-
-
   <p>
     <%= f.label :surfboard_rating %><br>
-    <%= f.text_field :surfboard_rating %>
+    <%= f.select :surfboard_rating, Surfboard.surfboard_ratings.to_a.map{ |key_and_index| [key_and_index[0].titleize, key_and_index[0]]} %>
   </p>
-
-
   <p>
     <%= f.submit %>
   </p>

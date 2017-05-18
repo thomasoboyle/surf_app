@@ -26,4 +26,13 @@ enum surfboard_type: %i[
                          other
                        ]
 
+enum surfboard_rating: %i[
+                           one_star
+                           two_stars
+                           three_stars
+                           four_stars
+                           five_stars
+                         ]
+
+
 end
