@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
-  def edit
-    @comment = Comment.find(params[:id])
-  end
-
   def create
     @surf_session = SurfSession.find(params[:surf_session_id])
     @comment = @surf_session.comments.create(comment_params)
     redirect_to surf_session_path(@surf_session)
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
   end
 
   def update

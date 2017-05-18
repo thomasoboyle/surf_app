@@ -17,3 +17,7 @@
   <strong>Board Rating</strong>
   <%= surfboard.surfboard_rating %>
 </p>
+
+<%= link_to 'Delete Surfboard', [surfboard.user, surfboard],
+              method: :delete,
+              data: { confirm: 'Are you user you would like to delete this board?'} %>

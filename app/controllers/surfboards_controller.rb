@@ -5,6 +5,13 @@ class SurfboardsController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @surfboard = @user.surfboards.find(params[:id])
+    @surfboard.destroy
+    redirect_to user_path(@user)
+  end
+
   private
 
   def surfboard_params
