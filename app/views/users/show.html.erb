@@ -22,9 +22,7 @@
   </p><br>
 
   <% if @user.surfboards.size > 0 %>
-    <h4>Quiver (<%= @user.surfboards.size %>)</h4>
-  <% else %>
-    <h4>Quiver</h4>
+    <h4><%= @user.name %> has an <%= @user.surfboards.size %> board quiver </h4>
   <% end %>
 
   <%= render @user.surfboards %>
