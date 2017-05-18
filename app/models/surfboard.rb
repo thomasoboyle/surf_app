@@ -14,4 +14,16 @@
 
 class Surfboard < ApplicationRecord
   belongs_to :user
+
+enum surfboard_type: %i[
+                         shortboard
+                         longboard
+                         fish
+                         bonzer
+                         foamie
+                         gun
+                         step_up
+                         other
+                       ]
+
 end
