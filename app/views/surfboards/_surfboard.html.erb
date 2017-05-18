@@ -15,9 +15,11 @@
 
 <p>
   <strong>Board Rating</strong>
-  <%= surfboard.surfboard_rating %>
+  <%= surfboard.surfboard_rating.titleize %>
 </p>
 
 <%= link_to 'Delete Surfboard', [surfboard.user, surfboard],
               method: :delete,
               data: { confirm: 'Are you user you would like to delete this board?'} %>
+
+<%= link_to 'Edit Surfboard', edit_user_surfboard_path(surfboard.user, surfboard.id) %>
