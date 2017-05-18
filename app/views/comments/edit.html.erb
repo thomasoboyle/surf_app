@@ -2,11 +2,11 @@
 
 <%= form_for([@comment.surf_session, @comment]) do |f| %>
   <p>
-    <%= f.label :commenter %><br>
+    <strong>Name</strong><br>
     <%= f.text_field :commenter %>
   </p>
   <p>
-    <%= f.label :body %><br>
+    <strong>Comment</strong><br>
     <%= f.text_area :body %>
   </p>
   <p>
