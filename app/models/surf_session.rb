@@ -52,36 +52,35 @@ class SurfSession < ApplicationRecord
   end
 
   enum average_wave_height: %i[
-                                flat
-                                knee_high
-                                waist_high
-                                chest_high
-                                head_high
-                                overhead
-                              ]
+    flat
+    knee_high
+    waist_high
+    chest_high
+    head_high
+    overhead
+  ]
 
-  enum surf_conditions:     %i[
-                                poor
-                                fair
-                                good
-                                epic
-                              ]
+  enum surf_conditions: %i[
+    poor
+    fair
+    good
+    epic
+  ]
 
-  enum consistency:         %i[
-                                no_waves
-                                very_inconsistent
-                                inconsistent
-                                fair_amout_of_waves
-                                consistent
-                                pumping
-                              ]
+  enum consistency: %i[
+    no_waves
+    very_inconsistent
+    inconsistent
+    fair_amout_of_waves
+    consistent
+    pumping
+  ]
 
-  enum session_rating:     %i[
-                                one_star
-                                two_stars
-                                three_stars
-                                four_stars
-                                five_stars
-                              ]
-
+  enum session_rating: %i[
+    one_star
+    two_stars
+    three_stars
+    four_stars
+    five_stars
+  ]
 end
