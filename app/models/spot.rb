@@ -17,7 +17,7 @@ class Spot < ApplicationRecord
   validates :title,     presence: true,
                         uniqueness: { case_sensitive: false },
                         length: { minimum: 5,
-                        too_short: "#{:title} must be at least %{count} characters long" }
+                        too_short: "Title must be at least #{count} characters long" }
   validates :location,  presence: true,
                         length: { minimum: 2 }
 end
