@@ -61,6 +61,7 @@ class SurfSessionsController < ApplicationController
         :session_rating,
         :session_summary,
         :spot_id,
+        :user,
         :start_time,
         :surf_conditions,
         :surfer,
