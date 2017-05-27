@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   def index
-    @spots = Spot.all
+    @spots = Spot.all.order(location: :asc).order(title: :asc)
   end
 
   def show
