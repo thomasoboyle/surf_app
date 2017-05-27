@@ -24,6 +24,8 @@
 #
 
 class SurfSession < ApplicationRecord
+  has_many    :users_sessions_memberships
+  has_many    :users, through: :users_sessions_memberships
   belongs_to  :spot
   has_many    :comments, dependent: :destroy
   has_many    :attachments
