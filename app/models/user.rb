@@ -14,6 +14,8 @@
 #
 
 class User < ApplicationRecord
+  has_many :users_sessions_memberships
+  has_many :surf_sessions, through: :users_sessions_memberships
   before_save { self.email = email.downcase }
   has_many :surfboards, dependent: :destroy
   validates :name,  presence: true, length: { maximum: 50, minimum: 5 }
