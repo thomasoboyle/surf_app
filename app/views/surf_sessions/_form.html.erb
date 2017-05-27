@@ -18,6 +18,7 @@
   <p>
     <strong><%= "Your Name" %><br></strong>
     <%= f.collection_select(:user_ids, User.all, :id, :name) %>
+    <p> Don't see your name? <%= link_to 'Add Yourself!', new_user_path %></p>
   </p>
 
   <p>
