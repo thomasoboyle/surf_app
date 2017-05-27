@@ -52,18 +52,18 @@ class SurfSessionsController < ApplicationController
     params
       .require(:surf_session)
       .permit(
-        :date,
-        :start_time,
-        :end_time,
         :average_wave_height,
+        :consistency,
+        :date,
+        :end_time,
+        :height,
+        :image,
+        :session_rating,
         :session_summary,
         :spot_id,
-        :surfer,
-        :height,
+        :start_time,
         :surf_conditions,
-        :consistency,
-        :session_rating,
-        :image,
+        :surfer,
         :tag_list
       )
   end
