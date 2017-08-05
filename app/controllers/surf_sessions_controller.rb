@@ -1,4 +1,6 @@
 class SurfSessionsController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update, :new, :create]
+
   def index
     @surf_sessions = SurfSession.paginate(:page => params[:page], :per_page => 20).order(date: :desc)
   end
@@ -67,5 +69,12 @@ class SurfSessionsController < ApplicationController
         :surfer,
         :tag_list
       )
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url
+    end
   end
 end
