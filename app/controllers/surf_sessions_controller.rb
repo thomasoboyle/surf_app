@@ -11,6 +11,7 @@ class SurfSessionsController < ApplicationController
 
   def new
     @surf_session = SurfSession.new
+    @surf_session.users_sessions_memberships.build
   end
 
   def edit
@@ -19,7 +20,6 @@ class SurfSessionsController < ApplicationController
 
   def create
     @surf_session = SurfSession.new(surf_params)
-
     if @surf_session.save
       redirect_to @surf_session
     else
@@ -67,7 +67,11 @@ class SurfSessionsController < ApplicationController
         :start_time,
         :surf_conditions,
         :surfer,
-        :tag_list
+        :tag_list,
+        users_sessions_memberships_attributes: [
+          :id,
+          :user_id
+        ]
       )
   end
 

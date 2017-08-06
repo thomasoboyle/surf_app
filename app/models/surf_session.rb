@@ -24,7 +24,7 @@
 #
 
 class SurfSession < ApplicationRecord
-  has_many    :users_sessions_memberships
+  has_many    :users_sessions_memberships, inverse_of: :surf_session
   has_many    :users, through: :users_sessions_memberships
   belongs_to  :spot
   has_many    :comments, dependent: :destroy
@@ -32,6 +32,7 @@ class SurfSession < ApplicationRecord
   has_many    :taggings
   has_many    :tags, through: :taggings, dependent: :destroy
 
+  accepts_nested_attributes_for :users_sessions_memberships, reject_if: :reject_users_sessions_membership
   validates :date,
             :start_time,
             :end_time,
@@ -85,4 +86,8 @@ class SurfSession < ApplicationRecord
     four_stars
     five_stars
   ]
+
+  def reject_users_sessions_membership(attributes)
+    attributes[:user_id].blank?
+  end
 end

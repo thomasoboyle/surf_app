@@ -11,5 +11,5 @@
 
 class UsersSessionsMembership < ApplicationRecord
   belongs_to :user
-  belongs_to :surf_session
+  belongs_to :surf_session, inverse_of: :users_sessions_memberships
 end
