@@ -2,7 +2,12 @@ class SurfSessionsController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :new, :create]
 
   def index
-    @surf_sessions = SurfSession.paginate(:page => params[:page], :per_page => 20).order(date: :desc)
+    @surf_sessions = SurfSession.
+      preload(
+        :spot,
+        :tags
+      ).
+      paginate(:page => params[:page], :per_page => 20).order(date: :desc)
   end
 
   def show
