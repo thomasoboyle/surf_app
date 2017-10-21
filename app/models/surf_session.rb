@@ -87,6 +87,11 @@ class SurfSession < ApplicationRecord
     five_stars
   ]
 
+  # Comma separated list of surfer names involved in surf session.
+  def surfer_list
+    users.map(&:name).join(', ')
+  end
+
   def reject_users_sessions_membership(attributes)
     attributes[:user_id].blank?
   end
