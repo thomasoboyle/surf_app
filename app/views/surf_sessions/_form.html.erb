@@ -20,7 +20,9 @@
     <%= f.fields_for :users_sessions_memberships do |ff| %>
       <%= ff.collection_select(:user_id, User.all, :id, :name) %>
     <% end %>
-    <p> Don't see your name? <%= link_to 'Add Yourself!', new_user_path %></p>
+    <% if !logged_in? %>
+      <p> Don't see your name? <%= link_to 'Add Yourself!', new_user_path %></p>
+    <% end %>
   </p>
 
   <p>
