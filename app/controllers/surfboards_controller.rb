@@ -29,10 +29,12 @@ class SurfboardsController < ApplicationController
 
   def surfboard_params
     params.require(:surfboard)
-          .permit(:surfboard_brand,
-                  :surfboard_length,
-                  :surfboard_type,
-                  :surfboard_rating)
+          .permit(
+            :surfboard_brand,
+            :surfboard_length,
+            :surfboard_type,
+            :surfboard_rating
+          )
   end
 
   def logged_in_user
