@@ -1,18 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'paperclip'
-
-gem 'pry'
-
-gem 'high_voltage', '~> 3.0.0'
-
-gem 'will_paginate', '~> 3.1.0'
-
 gem 'annotate'
-
 gem 'bcrypt', '3.1.11'
-
 gem 'bugsnag'
+gem 'high_voltage', '~> 3.0.0'
+gem 'paperclip'
+gem 'pry'
+gem 'rspec'
+gem 'will_paginate', '~> 3.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
