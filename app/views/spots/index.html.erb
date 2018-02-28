@@ -6,12 +6,14 @@
     <tr>
       <th>Title</th>
       <th>Location</th>
+      <th>Type</th>
     </tr>
 
     <% @spots.each do |spot| %>
       <tr>
         <td><%= spot.title %></td>
         <td><%= spot.location %></td>
+        <td><%= spot.wave_height %></td>
         <td><%= link_to 'View', spot_path(spot) %></td>
       </tr>
     <% end %>

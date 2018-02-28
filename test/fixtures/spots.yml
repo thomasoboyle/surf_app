@@ -7,9 +7,7 @@
 #  location   :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  lat        :float
-#  long       :float
-#  spot_id    :integer
+#  wave_type  :integer          default("beach_break"), not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

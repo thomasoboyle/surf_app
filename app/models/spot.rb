@@ -7,9 +7,7 @@
 #  location   :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  lat        :float
-#  long       :float
-#  spot_id    :integer
+#  wave_type  :integer          default("beach_break"), not null
 #
 
 class Spot < ApplicationRecord
@@ -20,4 +18,11 @@ class Spot < ApplicationRecord
                         too_short: "Title must be at least #{count} characters long" }
   validates :location,  presence: true,
                         length: { minimum: 2 }
+
+  enum wave_type: %i[
+    beach_break
+    point_break
+    reef_break
+  ]
+
 end

@@ -15,12 +15,12 @@
 #  surf_conditions     :integer          default("poor"), not null
 #  consistency         :integer          default("no_waves"), not null
 #  session_rating      :integer          default("one_star"), not null
-#  like_count          :integer          default(0), not null
 #  attachment_id       :integer
 #  image_file_name     :string
 #  image_content_type  :string
 #  image_file_size     :integer
 #  image_updated_at    :datetime
+#
 
 #
 
