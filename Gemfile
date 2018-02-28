@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'paperclip'
+gem 'paperclip', '~> 5.2.0'
 
 gem 'pry'
 
