@@ -14,7 +14,7 @@ default: &default
   username: thomasoboyle
   # password:
   database: surf_app
-
+  host: localhost
 development:
   <<: *default
 # database: db/development.sqlite3

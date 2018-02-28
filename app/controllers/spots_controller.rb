@@ -46,7 +46,11 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:title, :location)
+    params.require(:spot).permit(
+      :title,
+      :location,
+      :wave_height
+    )
   end
 
   def logged_in_user
