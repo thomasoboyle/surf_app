@@ -10,6 +10,12 @@
     <%= @spot.location %>
   </p>
 
+  <p>
+    <strong>Type:</strong>
+    <%= @spot.wave_type.titleize %>
+  </p>
+
+
   <% if logged_in? && admin_user? %>
     <%= link_to 'Edit this Spot', edit_spot_path %><br>
     <%= link_to 'Destroy this Spot', spot_path(@spot),
@@ -22,5 +28,5 @@
   <% else %>
     <%= link_to 'View All Spots', spots_path %><br>
   <% end %>
-
 </div>
+
