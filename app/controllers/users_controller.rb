@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @numbers = @user.users_sessions_memberships
   end
 
   def new
