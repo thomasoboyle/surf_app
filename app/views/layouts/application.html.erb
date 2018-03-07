@@ -1,43 +1,73 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>SurfApp</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
   </head>
-
   <body>
-    <header class="navbar navbar-inverse">
-      <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Home", sign_up_path %></li>
-        <li><%=link_to "About", page_path('about')%></li>
-        <li><%=link_to "Surf Sessions", surf_sessions_path %></li>
-        <li><%=link_to "Surf Spots", spots_path %></li>
-        <li><%=link_to "Tags", tags_path %></li>
-        <li><%= link_to "Surfers", users_path %></li>
-      </ul>
-      <ul class="nav navbar-nav">
-        <% if logged_in? && admin_user? %>
-          <li><%= link_to "Profile", current_user %></li>
-          <li><%= link_to "Settings", page_path('settings') %></li>
-          <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
-        <% elsif logged_in? %>
-          <li><%= link_to "Your Profile", current_user %></li>
-          <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
-        <% else %>
-          <li><%= link_to "Log In", login_path %></li>
-        <% end %>
-      </ul>
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/sign_up">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    </header>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/pages/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/surf_sessions">Surf Sessions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/spots">Surf Spots</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/tags">Tags</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/users">Surfers</a>
+      </li>
+      <li class="nav-item dropdown">
+        <% if logged_in? %>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Your Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="/surf_sessions/new">Record a Session</a>
+            <a class="dropdown-item" href="/spots/new">Add a New Surf Spot</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/users/<%= @user&.id %>">Profile</a>
+            <a class="dropdown-item" data-method="delete" href="/users/<%= @user&.id %>">Log Out</a>
+          </div>
+        <% else %>
+          <li class="nav-item">
+          <a class="nav-link" href="/login">Log In</a>
+        <% end %>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
 
     <%= yield %>
-    <%= debug(params) if Rails.env.development? %>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
-
 </html>
