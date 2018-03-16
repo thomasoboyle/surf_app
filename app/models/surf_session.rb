@@ -94,4 +94,28 @@ class SurfSession < ApplicationRecord
   def reject_users_sessions_membership(attributes)
     attributes[:user_id].blank?
   end
+
+  def formatted_date
+    date.strftime("%A, %B %d, %G")
+  end
+
+  def formatted_start_time
+    start_time.strftime("%I:%M %p")
+  end
+
+  def formatted_wave_height
+    average_wave_height.titleize
+  end
+
+  def formatted_conitions
+    surf_conditions&.titleize
+  end
+
+  def formmatted_consistency
+    consistency&.titleize
+  end
+
+  def formatted_rating
+    session_rating&.titleize
+  end
 end
