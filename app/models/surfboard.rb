@@ -33,4 +33,12 @@ class Surfboard < ApplicationRecord
     four_stars
     five_stars
   ]
+
+  def formmated_surfboard_type
+    surfboard_type.titleize
+  end
+
+  def formatted_surfboard_rating
+    surfboard_rating.titleize
+  end
 end
