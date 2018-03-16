@@ -25,4 +25,16 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  def formatted_updated_at
+    return updated_at.strftime('%A, %B %d, %G') if updated_at
+  end
+
+  def has_boards
+    true unless quiver_size == 0
+  end
+
+  def quiver_size
+    surfboards.size
+  end
 end
