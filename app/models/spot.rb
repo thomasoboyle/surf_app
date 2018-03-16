@@ -25,4 +25,7 @@ class Spot < ApplicationRecord
     reef_break
   ]
 
+  def formatted_wave_type
+    wave_type.titleize
+  end
 end

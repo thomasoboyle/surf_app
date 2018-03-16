@@ -10,12 +10,12 @@
 
 <p>
   <strong>Board Type</strong>
-  <%= surfboard.surfboard_type.titleize %>
+  <%= surfboard.formmated_surfboard_type %>
 </p>
 
 <p>
   <strong>Board Rating</strong>
-  <%= surfboard.surfboard_rating.titleize %>
+  <%= surfboard.formatted_surfboard_rating %>
 </p>
 
 <%= link_to 'Edit Surfboard', edit_user_surfboard_path(surfboard.user, surfboard.id) %><br>
