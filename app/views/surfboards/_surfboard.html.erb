@@ -1,25 +1,15 @@
-<p>
-  <strong>Surfboard Brand</strong>
-  <%= surfboard.surfboard_brand %>
-</p>
+<div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header"><%= surfboard.surfboard_length %> <%= surfboard.surfboard_brand %></div>
+  <div class="card-body text-dark">
+    <h5 class="card-title"><%= surfboard.formmated_surfboard_type %></h5>
+    <p class="card-text">
+      <strong>Board Rating</strong>
+      <%= surfboard.formatted_surfboard_rating %>
+    </p>
+    <%= link_to 'Edit', edit_user_surfboard_path(surfboard.user, surfboard.id) %>
+    <%= link_to 'Delete', [surfboard.user, surfboard],
+                  method: :delete,
+                  data: { confirm: 'Are you user you would like to delete this board?'} %>
+  </div>
+</div>
 
-<p>
-  <strong>Length</strong>
-  <%= surfboard.surfboard_length %>
-</p>
-
-<p>
-  <strong>Board Type</strong>
-  <%= surfboard.formmated_surfboard_type %>
-</p>
-
-<p>
-  <strong>Board Rating</strong>
-  <%= surfboard.formatted_surfboard_rating %>
-</p>
-
-<%= link_to 'Edit Surfboard', edit_user_surfboard_path(surfboard.user, surfboard.id) %><br>
-
-<%= link_to 'Delete Surfboard', [surfboard.user, surfboard],
-              method: :delete,
-              data: { confirm: 'Are you user you would like to delete this board?'} %>
