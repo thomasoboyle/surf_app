@@ -34,7 +34,9 @@
           <h4><br><%= @user.name %> has a <%= @user.quiver_size %> board quiver </h4>
         <% end %>
 
-        <%= render @user.surfboards %>
+        <div class="surfboard_table">
+          <%= render @user.surfboards %>
+        </div>
 
         <h4>Add a board</h4>
 
