@@ -49,7 +49,8 @@ class SpotsController < ApplicationController
     params.require(:spot).permit(
       :title,
       :location,
-      :wave_height
+      :wave_height,
+      :wave_type
     )
   end
 
