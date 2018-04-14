@@ -88,7 +88,11 @@ class SurfSession < ApplicationRecord
 
   # Comma separated list of surfer names involved in surf session.
   def surfer_list
-    users.map(&:name).join(', ')
+    if users.present?
+      users.map(&:name).join(', ')
+    else
+      surfer
+    end
   end
 
   def reject_users_sessions_membership(attributes)
