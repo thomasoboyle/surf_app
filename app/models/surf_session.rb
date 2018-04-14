@@ -86,6 +86,13 @@ class SurfSession < ApplicationRecord
     five_stars
   ]
 
+  # Legancy Code. There are current more surf sessions with
+  # the string :surfer than are using the user membership
+  def surfers
+    return surfer_list unless surfer.present?
+    surfer
+  end
+
   # Comma separated list of surfer names involved in surf session.
   def surfer_list
     users.map(&:name).join(', ')
