@@ -2,6 +2,10 @@
   <h1>Surf Spots</h1>
   <%= link_to 'Create a new surf spot', new_spot_path %>
   
+  <p>
+    <%= will_paginate %>
+  </p>
+
   <table class='table-condensed'>
     <tr>
       <th>Title</th>
@@ -19,4 +23,9 @@
     <% end %>
 
   </table>
+
+  <p>
+    <%= will_paginate %>
+  </p>
+
 </div><br>
