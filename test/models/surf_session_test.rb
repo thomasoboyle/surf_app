@@ -28,14 +28,7 @@ require 'test_helper'
 
 class SurfSessionTest < ActiveSupport::TestCase
   def setup
-    @surf_session = SurfSession.new(
-      date: '2018-05-08',
-      start_time: '2000-01-01 11:11:00',
-      end_time: '2000-01-01 11:11:01',
-      average_wave_height: 1,
-      session_summary: "string",
-      spot_id: 1
-    )
+    @surf_session = surf_sessions(:one)
   end
 
   test "valid surf session" do
@@ -49,6 +42,26 @@ class SurfSessionTest < ActiveSupport::TestCase
 
   test "invalid surf session without start_time" do
     @surf_session.start_time = nil
+    refute @surf_session.valid?
+  end
+
+  test "invalid surf session without end_time" do
+    @surf_session.end_time = nil
+    refute @surf_session.valid?
+  end
+
+  test "invalid surf session without average_wave_height" do
+    @surf_session.average_wave_height = nil
+    refute @surf_session.valid?
+  end
+
+  test "invalid surf session without session_summary" do
+    @surf_session.session_summary= nil
+    refute @surf_session.valid?
+  end
+
+  test "invalid surf session without spot_id" do
+    @surf_session.spot_id = nil
     refute @surf_session.valid?
   end
 end
