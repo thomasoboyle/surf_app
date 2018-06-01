@@ -15,6 +15,15 @@
 class Surfboard < ApplicationRecord
   belongs_to :user
 
+  validates :user_id,
+            :created_at,
+            :updated_at,
+            :surfboard_brand,
+            :surfboard_length,
+            :surfboard_type,
+            :surfboard_rating,
+            presence: true
+
   enum surfboard_type: %i[
     shortboard
     longboard
