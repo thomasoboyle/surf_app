@@ -12,4 +12,7 @@
 class Tagging < ApplicationRecord
   belongs_to :tag
   belongs_to :surf_session
+
+  validates :surf_session_id,
+            :tag_id, presence: true
 end

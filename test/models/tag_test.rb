@@ -11,7 +11,17 @@
 require 'test_helper'
 
 class TagTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  def setup
+    @tag = tags(:one)
+  end
+
+  test "valid tag" do
+    assert @tag.valid?
+  end
+
+  test "invalid without name" do
+    @tag.name = nil
+    refute @tag.valid?
+  end
 end
