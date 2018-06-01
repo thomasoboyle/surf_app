@@ -16,15 +16,7 @@ require 'test_helper'
 
 class SurfboardTest < ActiveSupport::TestCase
   def setup
-    @surfboard = Surfboard.new(
-      surfboard_brand: "Hobie",
-      surfboard_length: "6'1",
-      surfboard_type: "shortboard",
-      surfboard_rating: "one_star",
-      user_id: 1,
-      created_at: Time.now,
-      updated_at: Time.now
-      )
+    @surfboard = surfboards(:one)
   end
 
   test "valid surfboard" do
