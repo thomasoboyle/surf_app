@@ -24,4 +24,8 @@ class TagTest < ActiveSupport::TestCase
     @tag.name = nil
     refute @tag.valid?
   end
+
+  test "should save tag" do
+    assert @tag.save, "Saved the tag"
+  end
 end

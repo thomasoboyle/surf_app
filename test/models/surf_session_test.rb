@@ -64,4 +64,8 @@ class SurfSessionTest < ActiveSupport::TestCase
     @surf_session.spot_id = nil
     refute @surf_session.valid?
   end
+
+  test "should save surf session" do
+    assert @surf_session.save, "Saved the surf session"
+  end
 end

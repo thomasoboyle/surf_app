@@ -30,4 +30,8 @@ class SpotTest < ActiveSupport::TestCase
     @spot.location = nil
     refute @spot.valid?
   end
+
+  test "should save spot" do
+    assert @spot.save, "Saved the spot"
+  end
 end

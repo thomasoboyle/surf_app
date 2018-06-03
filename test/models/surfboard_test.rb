@@ -58,4 +58,8 @@ class SurfboardTest < ActiveSupport::TestCase
     refute @surfboard.valid?
   end
 
+  test "should save surfboard" do
+    assert @surfboard.save, "Saved the surfboard"
+  end
+
 end

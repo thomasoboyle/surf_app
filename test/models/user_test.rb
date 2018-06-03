@@ -40,7 +40,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "should save user" do
-    @user
     assert @user.save, "Saved the user"
   end
 end
