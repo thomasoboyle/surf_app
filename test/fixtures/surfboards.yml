@@ -18,8 +18,9 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+      surfboard_brand: Hobie
+      surfboard_length: 6'1
+      surfboard_type: shortboard
+      surfboard_rating: one_star
+      user_id: 1

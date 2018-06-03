@@ -27,7 +27,45 @@
 require 'test_helper'
 
 class SurfSessionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @surf_session = surf_sessions(:one)
+  end
+
+  test "valid surf session" do
+    assert @surf_session.valid?
+  end
+
+  test "invalid surf session without date" do
+    @surf_session.date = nil
+   refute @surf_session.valid?
+  end
+
+  test "invalid surf session without start_time" do
+    @surf_session.start_time = nil
+    refute @surf_session.valid?
+  end
+
+  test "invalid surf session without end_time" do
+    @surf_session.end_time = nil
+    refute @surf_session.valid?
+  end
+
+  test "invalid surf session without average_wave_height" do
+    @surf_session.average_wave_height = nil
+    refute @surf_session.valid?
+  end
+
+  test "invalid surf session without session_summary" do
+    @surf_session.session_summary= nil
+    refute @surf_session.valid?
+  end
+
+  test "invalid surf session without spot_id" do
+    @surf_session.spot_id = nil
+    refute @surf_session.valid?
+  end
+
+  test "should save surf session" do
+    assert @surf_session.save, "Saved the surf session"
+  end
 end
