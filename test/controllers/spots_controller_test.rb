@@ -6,4 +6,10 @@ class SpotsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "new should be success" do
+    user = User.create!(email: "example@example.com", password: "password", name: "example")
+    manual_sign_in_as(user)
+    get new_spot_path
+    assert_response :success
+  end
 end
