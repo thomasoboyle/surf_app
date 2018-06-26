@@ -28,7 +28,7 @@ require 'test_helper'
 
 class SurfSessionTest < ActiveSupport::TestCase
   def setup
-    @surf_session = surf_sessions(:one)
+    @surf_session = surf_sessions(:surf_session_one)
   end
 
   test "valid surf session" do
