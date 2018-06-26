@@ -26,18 +26,18 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+surf_session_one:
   date: 2016-11-12
   start_time: 2016-11-12 11:52:31
   end_time: 2016-11-12 11:52:31
   average_wave_height: 1
   session_summary: MyText
-  spot_id: 1
+  spot: one
 
 two:
   date: 2016-11-12
   start_time: 2016-11-12 11:52:31
   end_time: 2016-11-12 11:52:31
   average_wave_height: 1
-  session_summary: MyText
+  session_summary: MyText1
   spot_id: 1

@@ -15,6 +15,7 @@
 one:
   title: MyString
   location: MyText
+  wave_type: "beach_break"
 
 two:
   title: MyString
