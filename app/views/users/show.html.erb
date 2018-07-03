@@ -11,6 +11,10 @@
             <strong>Hometown</strong><br>
             <%= @user.hometown %>
           </p>
+          <p>
+          <strong>Last spot surfed</strong><br>
+            <%= @user&.users_sessions_memberships.last.surf_session.spot.title%>
+          </p>
           <ul class="list-group col-8 col">
             <li class="d-flex justify-content-between align-items-center">
               <strong>Total Surf Sessions Recorded</strong>
