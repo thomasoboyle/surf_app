@@ -37,4 +37,8 @@ class User < ApplicationRecord
   def quiver_size
     surfboards.size
   end
+
+  def last_wave_surfed
+    users_sessions_memberships&.last.surf_session.spot.title
+  end
 end
