@@ -12,15 +12,24 @@
             <%= @user.hometown %>
           </p>
           <p>
-          <strong>Last wave surfed</strong><br>
+            <strong>Last wave surfed</strong><br>
             <%= @user.last_wave_surfed %>
+          </p>
+            <strong>Most surfed wave</strong><br>
+            <%= Spot.select('count(users_sessions_memberships.id) as session_count, spots.*').
+                  joins(:surf_sessions).joins(:users_sessions_memberships).
+                  where('users_sessions_memberships.user_id = ?', @user.id).
+                  group('spots.id').
+                  order('session_count DESC').
+                  limit(1).first.title
+            %>
           </p>
           <ul class="list-group col-8 col">
             <li class="d-flex justify-content-between align-items-center">
               <strong>Total Surf Sessions Recorded</strong>
               <span class="badge badge-primary badge-pill"><%= @sessions_recorded %></span>
             </li>
-          </ul>
+          </ul><br>
         </div>
         <div class="col-4 col">
           <p>
