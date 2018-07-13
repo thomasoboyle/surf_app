@@ -12,6 +12,8 @@
 
 class Spot < ApplicationRecord
   has_many :surf_sessions
+  has_many :users_sessions_memberships, through: :surf_sessions
+
   validates :title,     presence: true,
                         uniqueness: { case_sensitive: false },
                         length: { minimum: 4,
