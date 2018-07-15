@@ -13,7 +13,7 @@
           </p>
           <p>
             <strong>Last wave surfed</strong><br>
-            <%= @user.last_wave_surfed %>
+            <%= @user&.last_wave_surfed %>
           </p>
             <strong>Most surfed wave</strong><br>
             <%= Spot.select('count(users_sessions_memberships.id) as session_count, spots.*').
