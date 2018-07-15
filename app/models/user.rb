@@ -35,7 +35,7 @@ class User < ApplicationRecord
   end
 
   def quiver_size
-    surfboards.size
+    surfboards&.size
   end
 
   def last_wave_surfed
