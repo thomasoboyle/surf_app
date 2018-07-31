@@ -12,24 +12,17 @@
             <%= @user.hometown %>
           </p>
           <p>
-            <strong>Last wave surfed</strong><br>
-            <%= @user&.last_wave_surfed %>
-          </p>
-            <strong>Most surfed wave</strong><br>
-            <%= Spot.select('count(users_sessions_memberships.id) as session_count, spots.*').
-                  joins(:surf_sessions).joins(:users_sessions_memberships).
-                  where('users_sessions_memberships.user_id = ?', @user.id).
-                  group('spots.id').
-                  order('session_count DESC').
-                  limit(1).first.title
-            %>
+            <% if @user.has_boards %>
+              <strong>Last wave surfed</strong><br>
+              <%= @user.last_wave_surfed %>
+            <% end %>
           </p>
           <ul class="list-group col-8 col">
             <li class="d-flex justify-content-between align-items-center">
               <strong>Total Surf Sessions Recorded</strong>
-              <span class="badge badge-primary badge-pill"><%= @sessions_recorded %></span>
+              <span class="badge badge-primary badge-pill"><%= @user.session_count %></span>
             </li>
-          </ul><br>
+          </ul>
         </div>
         <div class="col-4 col">
           <p>
@@ -43,7 +36,7 @@
         </div>
       </div>
       <div>
-        <% if @user.has_boards %>
+        <% if @user.has_surfed %>
           <h4><br><%= @user.name %> has a <%= @user.quiver_size %> board quiver </h4>
         <% end %>
 

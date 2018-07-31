@@ -38,7 +38,17 @@ class User < ApplicationRecord
     surfboards&.size
   end
 
+  def has_surfed
+    true unless session_count == 0
+  end
+
+  def session_count
+    users_sessions_memberships&.size
+  end
+
   def last_wave_surfed
-    users_sessions_memberships&.last.surf_session.spot.title
+    if users_sessions_memberships
+      users_sessions_memberships.last.surf_session.spot.title
+    end
   end
 end
