@@ -33,6 +33,17 @@
             <strong>Last Updated</strong><br>
             <%= @user.formatted_updated_at %>
           </p><br>
+           <p>
+           <strong>user_sessions</strong><br>
+            <% @user.users_sessions_memberships.each do |id| %>
+              <tr>
+                <td><%= SurfSession.find(id).date.strftime("%D") %></td>
+                <td><%= SurfSession.find(id).spot.title %></td>
+                <td><%= SurfSession.find(id).average_wave_height.titleize %></td>
+                <td><%= SurfSession.find(id).session_rating.titleize %></td>
+              <tr>
+            <% end %>
+          </p><br>
         </div>
       </div>
       <div>
