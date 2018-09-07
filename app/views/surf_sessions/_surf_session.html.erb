@@ -1,0 +1,18 @@
+<table class = "table-condensed">
+  <tr>
+    <th>Date</th>
+    <th>Location</th>
+    <th>Average Wave Height</th>
+    <th>Session Rating</th>
+  </tr>
+
+
+  <% @user.surf_sessions.each do |surf_session| %>
+    <tr>
+        <td><%= surf_session&.date.strftime("%D") %></td>
+        <td><%= surf_session.spot&.title %></td>
+        <td><%= surf_session&.average_wave_height.titleize %></td>
+        <td><%= surf_session&.session_rating.titleize %></td>
+    </tr>
+  <% end %>
+</table>
