@@ -7,7 +7,7 @@
   </tr>
 
 
-  <% @user.surf_sessions.each do |surf_session| %>
+  <% @user.surf_sessions.reverse.each do |surf_session| %>
     <tr>
         <td><%= surf_session&.date.strftime("%D") %></td>
         <td><%= surf_session.spot&.title %></td>
