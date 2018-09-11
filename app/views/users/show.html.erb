@@ -32,11 +32,7 @@
           <p>
             <strong>Last Updated</strong><br>
             <%= @user.formatted_updated_at %>
-          </p><br>
-          <p>
-            <strong>USER SESSIONS</strong><br>
-            <%= render 'surf_sessions/surf_session' %>
-          </p><br>
+         </p><br>
         </div>
       </div>
       <div>
@@ -54,10 +50,12 @@
 
         <% if logged_in? && current_user? %>
           <p><%= link_to 'Edit Profile', edit_user_path %></p>
-          <%= link_to 'View All Surfers', users_path %>
+          <p><%= link_to 'View All Surfers', users_path %></p>
         <% else %>
-          <%= link_to 'View All Surfers', users_path %>
+          <p><%= link_to 'View All Surfers', users_path %></p>
         <% end %>
+        <strong><%= @user.name %>'s Surf Sessions</strong><br>
+        <%= render 'surf_sessions/surf_session' %>
       </div>
     <div>
   </div>
