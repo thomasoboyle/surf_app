@@ -11,7 +11,7 @@
 
 default: &default
   adapter: postgresql
-  username: thomasoboyle
+  username: surf_user
   # password:
   database: surf_app
   host: localhost
