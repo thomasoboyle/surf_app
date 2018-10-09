@@ -1,25 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+Clone the project:
+`git clone git@github.com:thomasoboyle/surf_app.git`
 
-* Ruby version
+Set the ruby version via rbenv:
+`rbenv local 2.3.0`
 
-* System dependencies
+Install rails:
 
-* Configuration
+`gem install rails --version 5.0.2`
 
-* Database creation
+Install Postgres using Homebrew
+`brew install postgresql`
 
-* Database initialization
+And start the Postgres server:
+`pstgres -D /usr/local/var/postgres`
 
-* How to run the test suite
+Created and migrate the database:
+`rake db:create`
+`rake db:migrate`
 
-* Services (job queues, cache servers, search engines, etc.)
+Install the gems:
+`gem install bundler`
 
-* Deployment instructions
+## Specs
 
-* ...
-# surf_app
+The surf_app currently users Minitest... because it works.
+To run the entire test suit:
+`bin/rails test`
+
+To run a specific file:
+`bin/rails test spec/foo/bar`
