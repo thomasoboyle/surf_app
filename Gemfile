@@ -14,6 +14,11 @@ gem 'bcrypt', '3.1.11'
 
 gem 'bugsnag'
 
+# Rspec
+%w[rspec rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
+  gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
