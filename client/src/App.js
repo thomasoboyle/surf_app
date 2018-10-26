@@ -5,17 +5,29 @@ import './App.css';
 import Table from 'antd/lib/table'
 
 const columns = [{
-  title: 'Title',
-  dataIndex: 'title',
-  key: 'title',
+  title: 'Surfers',
+  dataIndex: 'surfer',
+  key: 'surfer',
 }, {
-  title: 'Location',
-  dataIndex: 'location',
-  key: 'location',
+  title: 'Date',
+  dataIndex: 'date',
+  key: 'date',
 }, {
-  title: 'Type',
-  dataIndex: 'wave_type',
-  key: 'wave_type',
+  title: 'Surf Spot',
+  dataIndex: 'surf_spot',
+  key: 'surf_spot',
+}, {
+  title: 'Wave Height',
+  dataIndex: 'average_wave_height',
+  key: 'average_wave_height',
+}, {
+  title: 'Date',
+  dataIndex: 'date',
+  key: 'date',
+}, {
+  title: 'Surf Spot',
+  dataIndex: 'surf_spot',
+  key: 'surf_spot',
 }];
 
 class App extends Component {
@@ -28,7 +40,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get('api/v1/spots.json')
+      .get('api/v1/surf_sessions.json')
       .then(response => {
         console.log(response);
         this.setState({
@@ -41,6 +53,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <h1> Surf Sessions </h1>
         <Table dataSource={this.state.data} columns={columns} />
       </div>
     );
