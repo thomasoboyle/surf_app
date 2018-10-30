@@ -13,4 +13,15 @@ RSpec.describe 'Spots', type: :request do
     get '/spots/new'
     expect(response).to have_http_status(200)
   end
+
+  describe 'GET #new' do
+    context 'when a user is not logged in' do
+      it 'redirects to the home page' do
+        get 'spots/new'
+        aggregate_failures do
+          expect(response).to have_http_status(302)
+        end
+      end
+    end
+  end
 end
