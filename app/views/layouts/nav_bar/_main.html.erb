@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark"> 
+  <% if logged_in? %>
+    <a class="navbar-brand text-light" href="/surf_sessions">Home</a>
+  <% else %>
+    <a class="navbar-brand text-light" href="/sign_up">Home</a>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= render 'layouts/nav_bar/links' %>
+</nav>
+
