@@ -1,0 +1,12 @@
+<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Your Profile
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+  <a class="dropdown-item" href="#">Settings</a>
+  <a class="dropdown-item" href="/surf_sessions/new">Record a Session</a>
+  <a class="dropdown-item" href="/spots/new">Add a New Surf Spot</a>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" href="/users/<%= @user&.id %>">Profile</a>
+  <div class="dropdown-item"><%= link_to "Log Out", logout_path, method: "delete" %></div>
+</div>
+
