@@ -16,50 +16,7 @@
   </head>
   <body>
   
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark"> 
-
-      <a class="navbar-brand text-light" href="/sign_up">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/surf_sessions">Surf Sessions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/spots">Surf Spots</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/tags">Tags</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/users">Surfers</a>
-            </li>
-            <li class="nav-item dropdown">
-            <% if logged_in? %>
-              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Your Profile
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Settings</a>
-                <a class="dropdown-item" href="/surf_sessions/new">Record a Session</a>
-                <a class="dropdown-item" href="/spots/new">Add a New Surf Spot</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/users/<%= @user&.id %>">Profile</a>
-                <div class="dropdown-item"><%= link_to "Log Out", logout_path, method: "delete" %></div>
-              </div>
-            <% else %>
-              <li class="nav-item">
-              <a class="nav-link" href="/login">Log In</a>
-            <% end %>
-            </li>
-          </ul>
-        </form>
-      </div>
-    </nav>
-
-
+    <%= render '/layouts/nav_bar' %>
 
     <%= yield %>
     <!-- Optional JavaScript -->
