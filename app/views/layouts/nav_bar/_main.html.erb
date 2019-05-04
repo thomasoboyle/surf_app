@@ -4,34 +4,9 @@
   <% else %>
     <a class="navbar-brand text-light" href="/sign_up">Home</a>
   <% end %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/surf_sessions">Surf Sessions</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/spots">Surf Spots</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/tags">Tags</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="/users">Surfers</a>
-        </li>
-        <li class="nav-item dropdown">
-        <% if logged_in? %>
-          <%= render 'layouts/nav_bar/logged_in_menu' %>
-        <% else %>
-          <li class="nav-item">
-          <a class="nav-link" href="/login">Log In</a>
-        <% end %>
-        </li>
-      </ul>
-    </form>
-  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= render 'layouts/nav_bar/links' %>
 </nav>
-
 
